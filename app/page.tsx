@@ -16,10 +16,11 @@ export default function Home() {
                      <span className="text-[#41f557]">ganhar em dólar</span>
                      <br /> postando vídeos virais
                   </h1>
-                  <p className="text-2xl mb-35">
+                  <p className="text-2xl mb-35 mx-50">
                      <span className="font-semibold">Transforme seu tempo livre em dinheiro!</span> Com nosso{" "}
-                     <span className="font-semibold">Pack Viral 2.0</span>, você posta vídeos prontos, pega milhões de visualizações e começa a
-                     receber em dólar e tudo de forma simples e rápida.
+                     <span className="font-semibold">Pack Viral 2.0</span>, você posta vídeos prontos,{" "}
+                     <span className="font-semibold text-[#41f557]">pega milhões de visualizações</span> e começa a receber em dólar e tudo de
+                     forma simples e rápida.
                   </p>
                </div>
                {/* TODO: Mais tarde gerar a foto ideal para esta seção */}
@@ -27,7 +28,7 @@ export default function Home() {
                <Image
                   width={857}
                   height={682}
-                  className="mb-47 self-baseline"
+                  className="mb-40 self-baseline"
                   src="/img/ilustracao.avif"
                   alt="Foto demonstrando os bônus que serão adquiridos ao realizar o trabalho"
                />
