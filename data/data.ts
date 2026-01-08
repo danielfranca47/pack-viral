@@ -27,3 +27,32 @@ export const oqueMudouNoCurso = [
    "5 bônus exclusivos que podem te levar a faturar R$3.000+ por mês.",
    "Suporte 24 horas para nunca ficar perdido.",
 ];
+
+interface IOqueIraReceber {
+   titulo: string;
+   descricao: string;
+}
+export const oqueIraReceber: IOqueIraReceber[] = [
+   {
+      titulo: "⏰ Melhores Horários para Postar",
+      descricao:
+         "Descubra os horários estratégicos em que seus vídeos têm mais chances de viralizar e alcançar milhares de pessoas rapidamente.",
+   },
+   {
+      titulo: "#️⃣ Hashtags Virais",
+      descricao:
+         "Tenha acesso às hashtags que realmente impulsionam o alcance dos seus vídeos e colocam seu conteúdo na frente de novos seguidores todos os dias.",
+   },
+   {
+      titulo: "🎵 Áudios e Músicas Motivacionais",
+      descricao:
+         "Receba uma seleção de músicas e áudios em alta no TikTok para aumentar o engajamento e deixar seus posts ainda mais atrativos.",
+   },
+   { titulo: "🎬 Acesso ao CapCut PRO (Compartilhado)", descricao: "Vamos disponibilizar contas de Capcut PRO para os alunos usarem!" },
+   { titulo: "🤖 Banco das Melhores IA’s", descricao: "Vou te passar todas inteligências artificiais que eu uso para ganhar muito dinheiro!" },
+   {
+      titulo: "✨ Pack Profissional de Edições (Transições, Efeitos Sonoros e Backgrounds)",
+      descricao:
+         "Transforme seus vídeos em produções profissionais com transições incríveis, efeitos sonoros envolventes e backgrounds prontos para bombar nas redes sociais.",
+   },
+];

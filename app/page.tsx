@@ -1,6 +1,6 @@
 import Container from "@/components/layout/Container";
 import VideoPlayer from "@/components/ui/VideoPlayer";
-import { nichosEmAlta, oqueMudouNoCurso } from "@/data/data";
+import { nichosEmAlta, oqueIraReceber, oqueMudouNoCurso } from "@/data/data";
 import { SquareCheck } from "lucide-react";
 import Image from "next/image";
 
@@ -71,19 +71,31 @@ export default function Home() {
          <section>
             <Container className="flex flex-col items-center mb-17">
                <h3 className="font-bold text-3xl text-center mb-7">
-                  O que mudou no <span className="text-[#00B419]">Pack Viral 2.0?</span>
+                  O que mudou no <span className="text-[#41f557]">Pack Viral 2.0?</span>
                </h3>
                <div className="flex flex-col gap-3 text-2xl">
                   {oqueMudouNoCurso.map((v, k) => (
                      <div className="flex items-center gap-2" key={k}>
-                        <SquareCheck className="text-[#00B419]" /> <p>{v}</p>
+                        <SquareCheck className="text-[#41f557]" /> <p>{v}</p>
                      </div>
                   ))}
                </div>
             </Container>
          </section>
-         {/* TODO: Implementar a seção do que mais o cliente irá receber */}
-         <section></section>
+         {/* Seção do que mais o cliente irá receber */}
+         <section>
+            <Container className="flex flex-col items-center mb-24">
+               <h3 className="font-bold text-4xl mb-9">Veja o que você vai receber a mais:</h3>
+               <div className="flex flex-col gap-7 mx-50">
+                  {oqueIraReceber.map(({ titulo, descricao }, k) => (
+                     <div className="flex flex-col gap-2 text-2xl" key={k}>
+                        <h6 className="text-[#41f557] font-bold">{titulo}</h6>
+                        <p>{descricao}</p>
+                     </div>
+                  ))}
+               </div>
+            </Container>
+         </section>
          {/* TODO: Implementar a seção dos testemunhos dos clientes */}
          <section></section>
          {/* TODO: Implementar a seção do bônus que será recebido */}
