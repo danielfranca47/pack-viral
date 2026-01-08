@@ -1,6 +1,7 @@
 import Container from "@/components/layout/Container";
 import VideoPlayer from "@/components/ui/VideoPlayer";
-import { nichosEmAlta } from "@/data/data";
+import { nichosEmAlta, oqueMudouNoCurso } from "@/data/data";
+import { SquareCheck } from "lucide-react";
 import Image from "next/image";
 
 export default function Home() {
@@ -53,8 +54,8 @@ export default function Home() {
          </section>
          {/* Seção dos nichos em alta */}
          <section>
-            <Container className="flex flex-col items-center mt-25 mb-15">
-               <h2 className="font-black text-4xl mb-8">Temos Todos Os Nichos em Alta 🔥</h2>
+            <Container className="flex flex-col items-center mt-25 mb-17">
+               <h2 className="font-black text-4xl mb-9">Temos Todos Os Nichos em Alta 🔥</h2>
                <div className="grid grid-cols-3 gap-12">
                   {nichosEmAlta?.map(({ titulo, foto }, k) => (
                      <div key={k}>
@@ -66,8 +67,21 @@ export default function Home() {
                <p className="text-2xl text-red-600 mt-8 text-center">TEM MUITO MAIS, ISSO É APENAS UMA AMOSTRA DO QUE VOCÊ TERÁ ACESSO!</p>
             </Container>
          </section>
-         {/* TODO: Implementar a seção do que mudou no pack viral */}
-         <section></section>
+         {/* Seção do que mudou no pack viral */}
+         <section>
+            <Container className="flex flex-col items-center mb-17">
+               <h3 className="font-bold text-3xl text-center mb-7">
+                  O que mudou no <span className="text-[#00B419]">Pack Viral 2.0?</span>
+               </h3>
+               <div className="flex flex-col gap-3 text-2xl">
+                  {oqueMudouNoCurso.map((v, k) => (
+                     <div className="flex items-center gap-2" key={k}>
+                        <SquareCheck className="text-[#00B419]" /> <p>{v}</p>
+                     </div>
+                  ))}
+               </div>
+            </Container>
+         </section>
          {/* TODO: Implementar a seção do que mais o cliente irá receber */}
          <section></section>
          {/* TODO: Implementar a seção dos testemunhos dos clientes */}

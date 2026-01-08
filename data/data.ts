@@ -17,3 +17,13 @@ export const nichosEmAlta: INichoEmAlta[] = [
    { titulo: "Nicho de futebol é muito viral no Brasil, e você consegue ter resultados rápidos.", foto: "/img/nichosEmAlta/11.png" },
    { titulo: "Melhores momentos dos podcast’s brasileiros para viralizar seu perfil.", foto: "/img/nichosEmAlta/12.png" },
 ];
+
+export const oqueMudouNoCurso = [
+   "Não entregamos só packs: entregamos packs + estratégia.",
+   "Packs atualizados com conteúdos virais para acelerar seus resultados.",
+   "Você não precisa saber editar: só baixar e postar.",
+   "Acesso ao Google VEO3 e +500 vídeos em novo formato viral.",
+   "Área de Membros nova com mais eficiência para os alunos",
+   "5 bônus exclusivos que podem te levar a faturar R$3.000+ por mês.",
+   "Suporte 24 horas para nunca ficar perdido.",
+];
