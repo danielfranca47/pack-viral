@@ -1,10 +1,12 @@
 import Container from "@/components/layout/Container";
 import VideoPlayer from "@/components/ui/VideoPlayer";
+import { nichosEmAlta } from "@/data/data";
 import Image from "next/image";
 
 export default function Home() {
    return (
       <main className="bg-black">
+         {/* Seção inicial */}
          <section>
             <div style={{ backgroundImage: "url('/img/banner.webp')" }}>
                <Container className="flex flex-col items-center text-center pt-4 pb-25">
@@ -49,8 +51,21 @@ export default function Home() {
                <VideoPlayer />
             </div>
          </section>
-         {/* TODO: Implementar a seção dos nichos em alta */}
-         <section></section>
+         {/* Seção dos nichos em alta */}
+         <section>
+            <Container className="flex flex-col items-center mt-25 mb-15">
+               <h2 className="font-black text-4xl mb-8">Temos Todos Os Nichos em Alta 🔥</h2>
+               <div className="grid grid-cols-3 gap-12">
+                  {nichosEmAlta?.map(({ titulo, foto }, k) => (
+                     <div key={k}>
+                        <Image className="rounded" width={260} height={146} src={foto} alt={`Ilustração demostrando o curso sobre: ${titulo}`} />
+                        <p className="max-w-3xs text-xl mt-2">{titulo}</p>
+                     </div>
+                  ))}
+               </div>
+               <p className="text-2xl text-red-600 mt-8 text-center">TEM MUITO MAIS, ISSO É APENAS UMA AMOSTRA DO QUE VOCÊ TERÁ ACESSO!</p>
+            </Container>
+         </section>
          {/* TODO: Implementar a seção do que mudou no pack viral */}
          <section></section>
          {/* TODO: Implementar a seção do que mais o cliente irá receber */}

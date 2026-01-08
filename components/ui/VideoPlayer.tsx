@@ -4,6 +4,6 @@ const testUrl = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sampl
 const testThumbnail = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerFun.jpg";
 
 const VideoPlayer = () => {
-   return <Video width={900} src={testUrl} className="**:mx-auto aspect-auto!" />;
+   return <Video width={900} src={testUrl} className="**:mx-auto aspect-auto! *:border-2" />;
 };
 export default VideoPlayer;
