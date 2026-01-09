@@ -68,3 +68,50 @@ export const testemunhos = [
    "/img/testemunhos/8.avif",
    "/img/testemunhos/9.avif",
 ];
+
+interface IBonus {
+   titulo: string;
+   descricao: string;
+   precoAnterior: number | string;
+   precoAtual: number | string;
+   /** Tamanho da imagem: X x X */
+   foto: string;
+}
+export const listaDeBonus: IBonus[] = [
+   {
+      titulo: "Treinamento Completo TikTok Cash",
+      descricao: "Do básico ao avançado, aprenda passo a passo como crescer no TikTok e monetizar sua conta sem complicação.",
+      foto: "/img/bonus/1.avif",
+      precoAnterior: "R$297,90",
+      precoAtual: "Grátis",
+   },
+   {
+      titulo: "Treinamento Completo TikTok Cash",
+      descricao: "Do básico ao avançado, aprenda passo a passo como crescer no TikTok e monetizar sua conta sem complicação.",
+
+      foto: "/img/bonus/2.avif",
+      precoAnterior: "R$297,90",
+      precoAtual: "Grátis",
+   },
+   {
+      titulo: "Treinamento Completo TikTok Cash",
+      descricao: "Do básico ao avançado, aprenda passo a passo como crescer no TikTok e monetizar sua conta sem complicação.",
+      foto: "/img/bonus/3.avif",
+      precoAnterior: "R$297,90",
+      precoAtual: "Grátis",
+   },
+   {
+      titulo: "Treinamento Completo TikTok Cash",
+      descricao: "Do básico ao avançado, aprenda passo a passo como crescer no TikTok e monetizar sua conta sem complicação.",
+      foto: "/img/bonus/4.avif",
+      precoAnterior: "R$297,90",
+      precoAtual: "Grátis",
+   },
+   {
+      titulo: "Treinamento Completo TikTok Cash",
+      descricao: "Do básico ao avançado, aprenda passo a passo como crescer no TikTok e monetizar sua conta sem complicação.",
+      foto: "/img/bonus/5.avif",
+      precoAnterior: "R$297,90",
+      precoAtual: "Grátis",
+   },
+];

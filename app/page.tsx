@@ -1,7 +1,7 @@
 import Container from "@/components/layout/Container";
 import EmblaCarousel from "@/components/ui/EmblaCarousel";
 import VideoPlayer from "@/components/ui/VideoPlayer";
-import { nichosEmAlta, oqueIraReceber, oqueMudouNoCurso } from "@/data/data";
+import { listaDeBonus, nichosEmAlta, oqueIraReceber, oqueMudouNoCurso } from "@/data/data";
 import { SquareCheck } from "lucide-react";
 import Image from "next/image";
 
@@ -108,7 +108,39 @@ export default function Home() {
             </Container>
          </section>
          {/* TODO: Implementar a seção do bônus que será recebido */}
-         <section></section>
+         <section>
+            <Container className="flex flex-col items-center mb-16">
+               <h5 className="underline font-black text-4xl mb-12">
+                  BÔNUS SOMENTE PARA OS <span className="text-tema">300 PRIMEIROS…</span>
+               </h5>
+               <div className="grid grid-cols-2 gap-8">
+                  {listaDeBonus.map((v, k) => (
+                     <div key={k} className="shadow-orange-300 border-4 border-orange-400 shadow-md flex flex-col mx-auto rounded-3xl">
+                        <Image
+                           width={1024}
+                           height={819}
+                           className="w-auto h-auto"
+                           src={v.foto}
+                           alt="Ilustração demonstrando o bônus que será recebido "
+                        />
+                        <div className="p-7 bg-zinc-950 text-2xl rounded-[inherit]">
+                           <h6 className="italic text-tema font-bold text-[19px] underline">Bônus #0{k + 1}</h6>
+                           <p className="text-3xl font-semibold mt-2 mb-4 text-green-300">{v.titulo}</p>
+                           <p>{v.descricao}</p>
+                           <div className="mt-4">
+                              <p>
+                                 De: <span className="text-red-500 font-bold">{v.precoAnterior}</span>
+                              </p>
+                              <p>
+                                 Por: <span className="text-green-600 font-bold">{v.precoAtual}</span>
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                  ))}
+               </div>
+            </Container>
+         </section>
          {/* TODO: Implementar a seção dos planos do curso */}
          <section></section>
          {/* TODO: Implementar a seção da garantia do curso */}
