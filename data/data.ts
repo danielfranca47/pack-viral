@@ -56,3 +56,15 @@ export const oqueIraReceber: IOqueIraReceber[] = [
          "Transforme seus vídeos em produções profissionais com transições incríveis, efeitos sonoros envolventes e backgrounds prontos para bombar nas redes sociais.",
    },
 ];
+
+export const testemunhos = [
+   "/img/testemunhos/1.avif",
+   "/img/testemunhos/2.avif",
+   "/img/testemunhos/3.avif",
+   "/img/testemunhos/4.avif",
+   "/img/testemunhos/5.avif",
+   "/img/testemunhos/6.avif",
+   "/img/testemunhos/7.avif",
+   "/img/testemunhos/8.avif",
+   "/img/testemunhos/9.avif",
+];

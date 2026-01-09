@@ -98,15 +98,13 @@ export default function Home() {
                </div>
             </Container>
          </section>
-         {/* TODO: Implementar a seção dos testemunhos dos clientes */}
+         {/* Seção dos testemunhos dos clientes */}
          <section>
-            <Container className="flex flex-col items-center">
-               <h3 className="font-bold text-3xl text-center mb-10">
+            <Container className="flex flex-col items-center mb-36">
+               <h3 className="font-black text-4xl text-center mb-12">
                   Temos mais de <span className="text-tema">10.000 alunos</span> e aqui está os feedbacks de alguns deles:
                </h3>
-               <div>
-                  <EmblaCarousel />
-               </div>
+               <EmblaCarousel />
             </Container>
          </section>
          {/* TODO: Implementar a seção do bônus que será recebido */}
