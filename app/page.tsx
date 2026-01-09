@@ -1,4 +1,5 @@
 import Container from "@/components/layout/Container";
+import CardBonus from "@/components/shared/CardBonus";
 import EmblaCarousel from "@/components/ui/EmblaCarousel";
 import VideoPlayer from "@/components/ui/VideoPlayer";
 import { listaDeBonus, nichosEmAlta, oqueIraReceber, oqueMudouNoCurso } from "@/data/data";
@@ -107,7 +108,7 @@ export default function Home() {
                <EmblaCarousel />
             </Container>
          </section>
-         {/* TODO: Implementar a seção do bônus que será recebido */}
+         {/* Seção do bônus que será recebido */}
          <section>
             <Container className="flex flex-col items-center mb-16">
                <h5 className="underline font-black text-4xl mb-12">
@@ -115,28 +116,15 @@ export default function Home() {
                </h5>
                <div className="grid grid-cols-2 gap-8">
                   {listaDeBonus.map((v, k) => (
-                     <div key={k} className="shadow-orange-300 border-4 border-orange-400 shadow-md flex flex-col mx-auto rounded-3xl">
-                        <Image
-                           width={1024}
-                           height={819}
-                           className="w-auto h-auto"
-                           src={v.foto}
-                           alt="Ilustração demonstrando o bônus que será recebido "
-                        />
-                        <div className="p-7 bg-zinc-950 text-2xl rounded-[inherit]">
-                           <h6 className="italic text-tema font-bold text-[19px] underline">Bônus #0{k + 1}</h6>
-                           <p className="text-3xl font-semibold mt-2 mb-4 text-green-300">{v.titulo}</p>
-                           <p>{v.descricao}</p>
-                           <div className="mt-4">
-                              <p>
-                                 De: <span className="text-red-500 font-bold">{v.precoAnterior}</span>
-                              </p>
-                              <p>
-                                 Por: <span className="text-green-600 font-bold">{v.precoAtual}</span>
-                              </p>
-                           </div>
-                        </div>
-                     </div>
+                     <CardBonus
+                        titulo={v.titulo}
+                        descricao={v.descricao}
+                        foto={v.foto}
+                        precoAtual={v.precoAtual}
+                        precoAnterior={v.precoAnterior}
+                        key={k}
+                        chave={k}
+                     />
                   ))}
                </div>
             </Container>
