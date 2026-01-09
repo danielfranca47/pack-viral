@@ -69,13 +69,15 @@ export const testemunhos = [
    "/img/testemunhos/9.avif",
 ];
 
-interface IBonus {
+export interface IBonus {
    titulo: string;
    descricao: string;
    precoAnterior: number | string;
    precoAtual: number | string;
    /** Tamanho da imagem: X x X */
    foto: string;
+   /** Somente utilizar no componente CardBonus */
+   chave?: number;
 }
 export const listaDeBonus: IBonus[] = [
    {
@@ -86,32 +88,32 @@ export const listaDeBonus: IBonus[] = [
       precoAtual: "Grátis",
    },
    {
-      titulo: "Treinamento Completo TikTok Cash",
-      descricao: "Do básico ao avançado, aprenda passo a passo como crescer no TikTok e monetizar sua conta sem complicação.",
+      titulo: "Pack Viral 1.0",
+      descricao: "Centenas de vídeos com alto potencial de viralização para turbinar seu engajamento e crescer rápido.",
 
       foto: "/img/bonus/2.avif",
-      precoAnterior: "R$297,90",
+      precoAnterior: "R$157,00",
       precoAtual: "Grátis",
    },
    {
-      titulo: "Treinamento Completo TikTok Cash",
-      descricao: "Do básico ao avançado, aprenda passo a passo como crescer no TikTok e monetizar sua conta sem complicação.",
+      titulo: "Curso Google Veo3 + 500 Vídeos Prontos:",
+      descricao: "Aprenda a criar influenciadoras virtuais com IA e já comece usando 500 vídeos prontos no formato mais viral do momento.",
       foto: "/img/bonus/3.avif",
-      precoAnterior: "R$297,90",
+      precoAnterior: "R$497,90",
       precoAtual: "Grátis",
    },
    {
-      titulo: "Treinamento Completo TikTok Cash",
-      descricao: "Do básico ao avançado, aprenda passo a passo como crescer no TikTok e monetizar sua conta sem complicação.",
+      titulo: "TikTok Shop",
+      descricao: "Receba um direcionamento de como começar a vender no tiktok shop e ganhe uma pack com videos de produtos.",
       foto: "/img/bonus/4.avif",
-      precoAnterior: "R$297,90",
+      precoAnterior: "R$127,00",
       precoAtual: "Grátis",
    },
    {
-      titulo: "Treinamento Completo TikTok Cash",
-      descricao: "Do básico ao avançado, aprenda passo a passo como crescer no TikTok e monetizar sua conta sem complicação.",
+      titulo: "Comunidade VisionClass:",
+      descricao: "Comunidade com todos alunos com desafios e troca de networking.",
       foto: "/img/bonus/5.avif",
-      precoAnterior: "R$297,90",
+      precoAnterior: "R$49,90",
       precoAtual: "Grátis",
    },
 ];
