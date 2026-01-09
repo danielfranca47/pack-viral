@@ -1,4 +1,5 @@
 import Container from "@/components/layout/Container";
+import EmblaCarousel from "@/components/ui/EmblaCarousel";
 import VideoPlayer from "@/components/ui/VideoPlayer";
 import { nichosEmAlta, oqueIraReceber, oqueMudouNoCurso } from "@/data/data";
 import { SquareCheck } from "lucide-react";
@@ -18,13 +19,13 @@ export default function Home() {
                   <div>
                      <h1 className="mb-12.5 text-4xl font-black uppercase">
                         Descubra como <br />
-                        <span className="text-[#41f557]">ganhar em dólar</span>
+                        <span className="text-tema">ganhar em dólar</span>
                         <br /> postando vídeos virais
                      </h1>
                      <p className="text-2xl mb-35 mx-50">
                         <span className="font-semibold">Transforme seu tempo livre em dinheiro!</span> Com nosso{" "}
                         <span className="font-semibold">Pack Viral 2.0</span>, você posta vídeos prontos,{" "}
-                        <span className="font-semibold text-[#41f557]">pega milhões de visualizações</span> e começa a receber em dólar e tudo de
+                        <span className="font-semibold text-tema">pega milhões de visualizações</span> e começa a receber em dólar e tudo de
                         forma simples e rápida.
                      </p>
                   </div>
@@ -40,13 +41,14 @@ export default function Home() {
                   />
 
                   {/* CTA */}
-                  <button className="bg-[#00B419] text-[27px] text-white px-6 py-3 rounded font-semibold sombraBtn cursor-pointer hover:-translate-y-1.25 transition">
+                  <button className="bg-[#FF751E] text-[27px] text-white px-6 py-3 rounded font-semibold sombraBtn cursor-pointer hover:-translate-y-1.25 transition">
                      Quero Monetizar!
                   </button>
                </Container>
             </div>
             {/* Vídeo de demonstração */}
             {/* TODO: Mais tarde implementar um poster muito mais melhor */}
+            {/* TODO: Estudar mais sobre a API em https://next-video.dev/docs#main */}
             <div className="mt-6 flex flex-col items-center">
                <h6 className="font-bold text-2xl mb-8">Entenda melhor no vídeo abaixo:</h6>
                <VideoPlayer />
@@ -71,12 +73,12 @@ export default function Home() {
          <section>
             <Container className="flex flex-col items-center mb-17">
                <h3 className="font-bold text-3xl text-center mb-7">
-                  O que mudou no <span className="text-[#41f557]">Pack Viral 2.0?</span>
+                  O que mudou no <span className="text-tema">Pack Viral 2.0?</span>
                </h3>
                <div className="flex flex-col gap-3 text-2xl">
                   {oqueMudouNoCurso.map((v, k) => (
                      <div className="flex items-center gap-2" key={k}>
-                        <SquareCheck className="text-[#41f557]" /> <p>{v}</p>
+                        <SquareCheck className="text-tema" /> <p>{v}</p>
                      </div>
                   ))}
                </div>
@@ -89,7 +91,7 @@ export default function Home() {
                <div className="flex flex-col gap-7 mx-50">
                   {oqueIraReceber.map(({ titulo, descricao }, k) => (
                      <div className="flex flex-col gap-2 text-2xl" key={k}>
-                        <h6 className="text-[#41f557] font-bold">{titulo}</h6>
+                        <h6 className="text-tema font-bold">{titulo}</h6>
                         <p>{descricao}</p>
                      </div>
                   ))}
@@ -97,7 +99,16 @@ export default function Home() {
             </Container>
          </section>
          {/* TODO: Implementar a seção dos testemunhos dos clientes */}
-         <section></section>
+         <section>
+            <Container className="flex flex-col items-center">
+               <h3 className="font-bold text-3xl text-center mb-10">
+                  Temos mais de <span className="text-tema">10.000 alunos</span> e aqui está os feedbacks de alguns deles:
+               </h3>
+               <div>
+                  <EmblaCarousel />
+               </div>
+            </Container>
+         </section>
          {/* TODO: Implementar a seção do bônus que será recebido */}
          <section></section>
          {/* TODO: Implementar a seção dos planos do curso */}
