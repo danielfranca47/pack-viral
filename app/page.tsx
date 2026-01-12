@@ -1,6 +1,7 @@
 import Container from "@/components/layout/Container";
 import CardBonus from "@/components/shared/CardBonus";
 import EmblaCarousel from "@/components/ui/EmblaCarousel";
+import ProgressBar from "@/components/ui/ProgressBar/ProgressBar";
 import VideoPlayer from "@/components/ui/VideoPlayer";
 import { listaDeBonus, nichosEmAlta, oqueIraReceber, oqueMudouNoCurso } from "@/data/data";
 import { SquareCheck } from "lucide-react";
@@ -130,7 +131,15 @@ export default function Home() {
             </Container>
          </section>
          {/* TODO: Implementar a seção dos planos do curso */}
-         <section></section>
+         <section className="text-center">
+            <Container className="flex flex-col items-center">
+               <h6 className="text-tema font-bold text-4xl">97% das pessoas já aproveitaram essa oferta, você vai ficar de fora?</h6>
+               {/* Progresso */}
+               <ProgressBar />
+               <p className="underline text-red-600 font font-semibold text-2xl uppercase">(Provavelmente termina hoje)</p>
+               <h5 className="font-black text-4xl mt-16">Chegou A Hora de De Conhecer os Planos</h5>
+            </Container>
+         </section>
          {/* TODO: Implementar a seção da garantia do curso */}
          <section></section>
          {/* TODO: Implementar a seção das dúvidas frequentes */}

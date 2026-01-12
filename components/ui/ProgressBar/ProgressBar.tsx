@@ -23,7 +23,7 @@ const ProgressBar = () => {
    }, [parentContainer]);
 
    return (
-      <div className="bg-zinc-100 w-full my-7 rounded" ref={parentContainer}>
+      <div className="bg-zinc-100 w-full my-9 rounded" ref={parentContainer}>
          <div className={`py-2 bg-tema text-end pe-4 rounded-s font-medium  ${styles.progresso}`}>97%</div>
       </div>
    );
