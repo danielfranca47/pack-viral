@@ -1,0 +1,17 @@
+.progresso {
+   width: 97%;
+}
+
+.progressoVisto .progresso {
+   animation: encher ease;
+   animation-duration: 4s;
+}
+
+@keyframes encher {
+   from {
+      width: 0;
+   }
+   to {
+      width: 97%;
+   }
+}
