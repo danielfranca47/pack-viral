@@ -130,7 +130,7 @@ export default function Home() {
                </div>
             </Container>
          </section>
-         {/* TODO: Implementar a seção dos planos do curso */}
+         {/* Seção dos planos do curso */}
          <section className="text-center">
             <Container className="flex flex-col items-center">
                <h6 className="text-tema font-bold text-4xl">97% das pessoas já aproveitaram essa oferta, você vai ficar de fora?</h6>
@@ -168,8 +168,26 @@ export default function Home() {
                </div>
             </Container>
          </section>
-         {/* TODO: Implementar a seção da garantia do curso */}
-         <section></section>
+         {/* Seção do selo de garantia do curso */}
+         <section>
+            <Container className="flex flex-col items-center gap-16 py-30 text-center">
+               <Image
+                  className="size-56"
+                  width={426}
+                  height={426}
+                  src="/img/selo-garantia.avif"
+                  alt="Ilustração do selo de garantia de 7 dias"
+               />
+               <h6 className="text-4xl font-black">Satisfação garantida</h6>
+               <p className="font-light text-2xl mx-80">
+                  Eu ofereço uma garantia de 7 dias para você experimentar o conteúdo, se não ficar satisfeito com o conteúdo ou se você se
+                  arrepender por qualquer outro motivo, basta me enviar um e-mail e eu devolvo 100% do seu dinheiro. Sem questionamentos e sem
+                  burocracia.
+               </p>
+            </Container>
+         </section>
+         {/* Separador */}
+         <hr className="text-tema border-2" />
          {/* TODO: Implementar a seção das dúvidas frequentes */}
          <section></section>
          {/* TODO: Implementar a seção do CTA para o whatsapp */}

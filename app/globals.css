@@ -9,11 +9,11 @@
    --color-background: var(--background);
    --color-tema: var(--tema);
    --font-sans: var(--font-geist-sans);
+   --font-inter: var(--font-inter-sans);
 }
 
 body {
    background: var(--background);
-   font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Custom */
