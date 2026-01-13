@@ -43,9 +43,7 @@ export default function Home() {
                   />
 
                   {/* CTA */}
-                  <button className="bg-[#FF751E] text-[27px] text-white px-6 py-3 rounded font-semibold sombraBtn cursor-pointer hover:-translate-y-1.25 transition">
-                     Quero Monetizar!
-                  </button>
+                  <Button>Quero monetizar</Button>
                </Container>
             </div>
             {/* Vídeo de demonstração */}
