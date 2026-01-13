@@ -1,10 +1,11 @@
 import Container from "@/components/layout/Container";
 import CardBonus from "@/components/shared/CardBonus";
+import Button from "@/components/ui/Button";
 import EmblaCarousel from "@/components/ui/EmblaCarousel";
 import ProgressBar from "@/components/ui/ProgressBar/ProgressBar";
 import VideoPlayer from "@/components/ui/VideoPlayer";
 import { listaDeBonus, nichosEmAlta, oqueIraReceber, oqueMudouNoCurso } from "@/data/data";
-import { SquareCheck } from "lucide-react";
+import { CircleArrowDown, CircleChevronRight, SquareCheck } from "lucide-react";
 import Image from "next/image";
 
 export default function Home() {
@@ -132,10 +133,70 @@ export default function Home() {
          <section className="text-center">
             <Container className="flex flex-col items-center">
                <h6 className="text-tema font-bold text-4xl">97% das pessoas já aproveitaram essa oferta, você vai ficar de fora?</h6>
-               {/* Progresso */}
                <ProgressBar />
                <p className="underline text-red-600 font font-semibold text-2xl uppercase">(Provavelmente termina hoje)</p>
-               <h5 className="font-black text-4xl mt-16">Chegou A Hora de De Conhecer os Planos</h5>
+               <h5 className="font-black text-4xl mt-20">Chegou A Hora de De Conhecer os Planos</h5>
+               <CircleArrowDown className="size-13 bg-tema rounded-full p-1.5 mt-11 mb-10" />
+               <div className="grid grid-cols-2 gap-9 *:rounded-4xl text-center *:shadow-orange-300 *:border-4 *:border-orange-400 *:shadow-md *:p-6 *:py-8">
+                  {/* Plano Premium */}
+                  <div className="sombraBtn text-black bg-zinc-100">
+                     <p className="text-2xl italic font-light">Este é um produto 100% digital, e você receberá o acesso por email.</p>
+                     <Image className="h-auto mt-4" width={650} height={600} src="/img/planos/iniciante.avif" alt="Foto descrevendo o produto" />
+                     <p className="my-5 text-4xl font-black text-shadow-lg">
+                        Plano Superpack <span className="text-amber-600">Premium</span>
+                     </p>
+                     <p className="font-bold mb-5 text-2xl">Apenas hoje, você receberá tudo isso:</p>
+                     {/* Destaques */}
+                     <div className="flex flex-col gap-3 *:flex *:items-center *:gap-2 text-start text-xl font-medium mb-7">
+                        <div>
+                           <CircleChevronRight className="bg-tema rounded-full size-6" /> <p>Pack Viral 2.0</p>
+                        </div>
+                        <div className="border"></div>
+                        <div>
+                           <CircleChevronRight className="bg-tema rounded-full size-6" /> <p>+70.000 Vídeos Virais</p>
+                        </div>
+                        <div className="border"></div>
+                        <div>
+                           <CircleChevronRight className="bg-tema rounded-full size-6" /> <p>Acesso Imediato</p>
+                        </div>
+                        <div className="border"></div>
+                        <div>
+                           <CircleChevronRight className="bg-tema rounded-full size-6" /> <p>7 Dias de Garantia</p>
+                        </div>
+                        <div className="border"></div>
+                        <div>
+                           <CircleChevronRight className="bg-tema rounded-full size-6" /> <p>Bônus 01# Treinamento Completo Tiktok Cash</p>
+                        </div>
+                        <div className="border"></div>
+                        <div>
+                           <CircleChevronRight className="bg-tema rounded-full size-6" /> <p>Bônus 02# Pack Viral 1.0</p>
+                        </div>
+                        <div className="border"></div>
+                        <div>
+                           <CircleChevronRight className="bg-tema rounded-full size-6" /> <p>Bônus 03# Curso Google Veo3 + 500 Vídeos Prontos</p>
+                        </div>
+                        <div className="border"></div>
+                        <div>
+                           <CircleChevronRight className="bg-tema rounded-full size-6" /> <p>Bônus 04# Tiktok Shop</p>
+                        </div>
+                        <div className="border"></div>
+                        <div>
+                           <CircleChevronRight className="bg-tema rounded-full size-6" /> <p>Bônus 05# Comunidade VisionClass</p>
+                        </div>
+                     </div>
+                     {/* Proposta */}
+                     <div className="pb-5">
+                        <p className="font-bold mb-4 text-2xl">Receba o acesso agora por:</p>
+                        <p className="mb-13 text-7xl font-black text-tema">R$47,00</p>
+                        <Button className="uppercase">Sim! Quero essa super oferta!</Button>
+                        <p className="font-semibold mt-9">
+                           Aproveite Agora: <span className="underline font-light">Você não encontrará este preço depois!</span>
+                        </p>
+                     </div>
+                  </div>
+                  {/* Plano Iniciante */}
+                  <div className="sombraBtn"></div>
+               </div>
             </Container>
          </section>
          {/* TODO: Implementar a seção da garantia do curso */}
