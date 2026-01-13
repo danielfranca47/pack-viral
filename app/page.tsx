@@ -142,7 +142,7 @@ export default function Home() {
                   {/* Plano Premium */}
                   <CardPlano
                      foto="/img/planos/premium.avif"
-                     cta="Sim! Quero essa super oferta"
+                     cta="SIM! QUERO ESSA SUPER OFERTA!"
                      modo="premium"
                      preco={47}
                      destaques={[
@@ -158,7 +158,13 @@ export default function Home() {
                      ]}
                   />
                   {/* Plano Iniciante */}
-                  <div className="sombraBtn"></div>
+                  <CardPlano
+                     foto="/img/planos/iniciante.avif"
+                     cta="Quero Comprar Essa Oferta!"
+                     modo="iniciante"
+                     preco={27}
+                     destaques={["Pack Viral 2.0", "+10.000 Vídeos Virais", "Acesso Imediato", "7 Dias de Garantia"]}
+                  />
                </div>
             </Container>
          </section>
