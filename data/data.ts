@@ -117,3 +117,72 @@ export const listaDeBonus: IBonus[] = [
       precoAtual: "Grátis",
    },
 ];
+
+export interface IPerguntaResposta {
+   pergunta: string;
+   resposta: string;
+}
+export const perguntaResposta: IPerguntaResposta[] = [
+   {
+      pergunta: "Os vídeos têm direitos autorais?",
+      resposta:
+         "Não! Nossos vídeos passam por um processo de limpeza de metadados e ainda ensinamos você a remodelá-los, adaptando legenda, trilha sonora e outros detalhes para que fiquem 100% originais no seu perfil. Isso garante segurança e evita problemas com direitos autorais.",
+   },
+   {
+      pergunta: "Como vou receber o curso?",
+      resposta:
+         "Assim que sua compra for confirmada, você recebe acesso imediato à área de membros por e-mail. Lá dentro estarão todos os packs, bônus e o treinamento completo para você começar agora mesmo.",
+   },
+   {
+      pergunta: "Os vídeos são prontos para postar ou preciso editar?",
+      resposta:
+         "Você pode postar do jeito que estão, mas nós recomendamos personalizar (colocar sua legenda, música ou voz) para aumentar o engajamento e deixar único.",
+   },
+   {
+      pergunta: "Esse método serve para iniciantes?",
+      resposta:
+         "Sim! Nosso passo a passo foi feito para quem nunca postou vídeos antes. Você vai aprender desde o básico - criar conta, configurar perfil - até estratégias avançadas de monetização.",
+   },
+   {
+      pergunta: "O que é o CapCut Pro compartilhado e como funciona?",
+      resposta:
+         "Disponibilizamos contas do CapCut Pro para todos os alunos utilizarem. Como são contas compartilhadas, pode acontecer de muitas pessoas estarem usando ao mesmo tempo e isso limitar o acesso em alguns momentos.",
+   },
+   {
+      pergunta: "Preciso aparecer nos vídeos?",
+      resposta:
+         "Não! A maioria dos conteúdos são vídeos prontos que você só posta. Você não precisa mostrar o rosto nem gravar nada se não quiser.",
+   },
+   {
+      pergunta: "Qual o formato dos vídeos?",
+      resposta: "Todos os vídeos são entregues no formato vertical (9:16), ideal para TikTok, Reels, Shorts e Kwai.",
+   },
+   {
+      pergunta: "Por quanto tempo terei acesso ao pack?",
+      resposta: "O acesso é vitalício para os packs que você comprou, você pode baixar e usar quantas vezes quiser.",
+   },
+   {
+      pergunta: "Existe risco de tomar strike usando esses vídeos?",
+      resposta:
+         "Não, porque todos os vídeos são verificados e livres de direitos autorais. Além disso, ensinamos como modificar para garantir 100% de segurança.",
+   },
+   {
+      pergunta: "Preciso ter muitos seguidores para ganhar dinheiro?",
+      resposta:
+         "Não precisa! Com os vídeos certos e o método que vamos te ensinar, você pode começar a monetizar com poucos seguidores e ir crescendo enquanto já está recebendo.",
+   },
+   {
+      pergunta: "Os vídeos vêm com música?",
+      resposta: "Alguns sim, mas recomendamos que use as músicas que estão em alta no TikTok para melhorar o alcance.",
+   },
+   {
+      pergunta: "Posso vender esses vídeos para outras pessoas?",
+      resposta: "Não. O pack é para uso pessoal, você pode criar e postar, mas não revender o conteúdo.",
+   },
+   { pergunta: "Preciso de computador para usar os vídeos?", resposta: "Não, você pode baixar direto no celular." },
+   { pergunta: "Preciso ter um celular potente?", resposta: "Não. Qualquer celular que rode o Instagram ou Tiktok é suficiente para começar." },
+   {
+      pergunta: "Terei suporte se tiver dúvidas?",
+      resposta: "Sim! Nosso suporte é 24 horas para tirar suas dúvidas e te ajudar a aplicar o método corretamente.",
+   },
+];

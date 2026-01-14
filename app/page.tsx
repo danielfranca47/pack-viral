@@ -1,12 +1,13 @@
 import Container from "@/components/layout/Container";
 import CardBonus from "@/components/shared/CardBonus";
 import CardPlano from "@/components/shared/CardPlano";
+import Accordion from "@/components/ui/Accordion";
 import Button from "@/components/ui/Button";
 import EmblaCarousel from "@/components/ui/EmblaCarousel";
 import ProgressBar from "@/components/ui/ProgressBar/ProgressBar";
 import VideoPlayer from "@/components/ui/VideoPlayer";
-import { listaDeBonus, nichosEmAlta, oqueIraReceber, oqueMudouNoCurso } from "@/data/data";
-import { CircleArrowDown, CircleChevronRight, SquareCheck } from "lucide-react";
+import { listaDeBonus, nichosEmAlta, oqueIraReceber, oqueMudouNoCurso, perguntaResposta } from "@/data/data";
+import { CircleArrowDown, SquareCheck } from "lucide-react";
 import Image from "next/image";
 
 export default function Home() {
@@ -170,7 +171,7 @@ export default function Home() {
          </section>
          {/* Seção do selo de garantia do curso */}
          <section>
-            <Container className="flex flex-col items-center gap-16 py-30 text-center">
+            <Container className="flex flex-col items-center gap-14 py-30 text-center">
                <Image
                   className="size-56"
                   width={426}
@@ -188,8 +189,15 @@ export default function Home() {
          </section>
          {/* Separador */}
          <hr className="text-tema border-2" />
-         {/* TODO: Implementar a seção das dúvidas frequentes */}
-         <section></section>
+         {/* Seção das dúvidas frequentes */}
+         <section>
+            <Container className="text-center py-30">
+               <h6 className="mb-15 text-5xl font-black">DÚVIDAS FREQUENTES</h6>
+               <div className="text-start mx-45">
+                  <Accordion perguntasRespostas={perguntaResposta} />
+               </div>
+            </Container>
+         </section>
          {/* TODO: Implementar a seção do CTA para o whatsapp */}
          <section></section>
       </main>
