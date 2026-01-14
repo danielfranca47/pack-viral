@@ -14,7 +14,6 @@ export default function Home() {
    return (
       <main className="bg-black">
          {/* Seção inicial */}
-         {/* TODO: Finalizar a responsividade da seção inicial  */}
          <section>
             <div className="bg-contain bg-no-repeat md:bg-cover md:bg-center bg-[url('/img/bannerMobile2.webp')] md:bg-[url('/img/banner.webp')]">
                <Container className="flex flex-col items-center text-center pt-4 pb-12 sm:pb-25">
@@ -58,24 +57,25 @@ export default function Home() {
             </div>
             {/* Vídeo de demonstração */}
             <div className="mt-6 flex flex-col items-center text-center">
-               <h6 className="font-bold text-2xl mb-8">Entenda melhor no vídeo abaixo:</h6>
+               <h6 className="font-bold text-xl sm:text-2xl mb-8">Entenda melhor no vídeo abaixo:</h6>
                <VideoPlayer />
             </div>
          </section>
          {/* Seção dos nichos em alta */}
-         {/* TODO: Finalizar a responsividade da seção dos nichos em alta  */}
          <section>
-            <Container className="flex flex-col items-center mt-25 mb-17">
-               <h2 className="font-black text-4xl mb-9">Temos Todos Os Nichos em Alta 🔥</h2>
-               <div className="grid grid-cols-3 gap-12">
+            <Container className="flex flex-col items-center mt-20 md:mt-25 mb-13 sm:mb-17">
+               <h2 className="font-black text-2xl sm:text-3xl md:text-4xl mb-9 text-center">Temos Todos Os Nichos em Alta 🔥</h2>
+               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-6 lg:gap-12">
                   {nichosEmAlta?.map(({ titulo, foto }, k) => (
                      <div key={k}>
                         <Image className="rounded" width={260} height={146} src={foto} alt={`Ilustração demostrando o curso sobre: ${titulo}`} />
-                        <p className="max-w-3xs text-xl mt-2">{titulo}</p>
+                        <p className="max-w-3xs sm:text-xl mt-2 w-full h-auto">{titulo}</p>
                      </div>
                   ))}
                </div>
-               <p className="text-2xl text-red-600 mt-8 text-center">TEM MUITO MAIS, ISSO É APENAS UMA AMOSTRA DO QUE VOCÊ TERÁ ACESSO!</p>
+               <p className="text-lg sm:text-2xl text-red-600 mt-8 text-center">
+                  TEM MUITO MAIS, ISSO É APENAS UMA AMOSTRA DO QUE VOCÊ TERÁ ACESSO!
+               </p>
             </Container>
          </section>
          {/* Seção do que mudou no pack viral */}
