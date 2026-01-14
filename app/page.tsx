@@ -132,14 +132,14 @@ export default function Home() {
             </Container>
          </section>
          {/* Seção dos planos do curso */}
-         <section className="text-center">
-            <Container className="flex flex-col items-center">
+         <section>
+            <Container className="flex flex-col items-center text-center">
                <h6 className="text-tema font-bold text-4xl">97% das pessoas já aproveitaram essa oferta, você vai ficar de fora?</h6>
                <ProgressBar />
                <p className="underline text-red-600 font font-semibold text-2xl uppercase">(Provavelmente termina hoje)</p>
                <h5 className="font-black text-4xl mt-20">Chegou A Hora de De Conhecer os Planos</h5>
                <CircleArrowDown className="size-13 bg-tema rounded-full p-1.5 mt-11 mb-10" />
-               <div className="grid grid-cols-2 gap-9 *:rounded-4xl text-center *:shadow-orange-300 *:border-4 *:border-orange-400 *:shadow-md *:p-6 *:py-8">
+               <div className="grid grid-cols-2 gap-9 *:rounded-4xl text-center *:shadow-orange-300 *:border-4 *:border-orange-400 *:shadow-md *:p-6 *:py-8 relative">
                   {/* Plano Premium */}
                   <CardPlano
                      foto="/img/planos/premium.avif"
@@ -159,6 +159,7 @@ export default function Home() {
                      ]}
                   />
                   {/* Plano Iniciante */}
+
                   <CardPlano
                      foto="/img/planos/iniciante.avif"
                      cta="Quero Comprar Essa Oferta!"
@@ -198,8 +199,15 @@ export default function Home() {
                </div>
             </Container>
          </section>
-         {/* TODO: Implementar a seção do CTA para o whatsapp */}
-         <section></section>
+         <hr className="text-tema border-2" />
+         {/* Seção do CTA para o whatsapp */}
+         <section>
+            <Container className="flex flex-col items-center py-20 text-center gap-8">
+               <h6 className="text-3xl font-semibold">Ainda ficou com alguma dúvida que você não encontrou a resposta acima?</h6>
+               <p className="text-2xl">Fale conosco no WhatsApp clicando no botão abaixo:</p>
+               <Button className="uppercase">Tire suas dúvidas</Button>
+            </Container>
+         </section>
       </main>
    );
 }

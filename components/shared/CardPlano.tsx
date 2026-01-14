@@ -11,7 +11,7 @@ interface ICardPlano {
 }
 const CardPlano = ({ foto, modo, destaques, preco, cta }: ICardPlano) => {
    return (
-      <div className={`sombraBtn ${modo === "premium" ? "text-black bg-zinc-100" : "bg-black text-zinc-100"} h-fit`}>
+      <div className={`sombraBtn ${modo === "premium" ? "text-black bg-zinc-100" : "bg-black text-zinc-100 sticky top-0"} h-fit`}>
          <p className="text-2xl italic font-light">Este é um produto 100% digital, e você receberá o acesso por email.</p>
          <Image className="h-auto mt-4" width={650} height={600} src={foto} alt="Foto descrevendo o produto" />
          {modo === "premium" ? (
@@ -27,7 +27,8 @@ const CardPlano = ({ foto, modo, destaques, preco, cta }: ICardPlano) => {
             {destaques.map((v, k) => (
                <>
                   <div key={k}>
-                     <CircleChevronRight className={`bg-tema ${modo === "premium" ? "text-red-100" : "text-black"} rounded-full size-6`} /> <p>{v}</p>
+                     <CircleChevronRight className={`bg-tema ${modo === "premium" ? "text-red-100" : "text-black"} rounded-full size-6`} />{" "}
+                     <p>{v}</p>
                   </div>
                   {k + 1 < destaques.length && <div className="border"></div>}
                </>
