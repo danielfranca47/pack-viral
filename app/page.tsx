@@ -81,7 +81,7 @@ export default function Home() {
                <div className="flex flex-col gap-3 text-2xl">
                   {oqueMudouNoCurso.map((v, k) => (
                      <div className="flex items-center gap-2" key={k}>
-                        <SquareCheck className="text-tema" /> <p>{v}</p>
+                        <SquareCheck className="text-black bg-tema rounded " /> <p>{v}</p>
                      </div>
                   ))}
                </div>
