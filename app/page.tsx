@@ -14,20 +14,27 @@ export default function Home() {
    return (
       <main className="bg-black">
          {/* Seção inicial */}
+         {/* TODO: Finalizar a responsividade da seção inicial  */}
          <section>
-            <div style={{ backgroundImage: "url('/img/banner.webp')" }}>
-               <Container className="flex flex-col items-center text-center pt-4 pb-25">
+            <div className="bg-contain bg-no-repeat md:bg-cover md:bg-center bg-[url('/img/bannerMobile2.webp')] md:bg-[url('/img/banner.webp')]">
+               <Container className="flex flex-col items-center text-center pt-4 pb-12 sm:pb-25">
                   {/* Logo */}
-                  <Image width={292} height={127} className="mt-2.5 mb-30 w-60 h-auto" src="/img/logo.png" alt="Logotipo do site" />
+                  <Image
+                     width={292}
+                     height={127}
+                     className="mt-2.5 mb-70 md:mb-30 sm:mb-30 w-40 sm:w-60 h-auto"
+                     src="/img/logo.png"
+                     alt="Logotipo do site"
+                  />
 
                   {/* Intro */}
                   <div>
-                     <h1 className="mb-12.5 text-4xl font-black uppercase">
+                     <h1 className="mb-8 sm:mb-12.5 text-2xl sm:text-3xl md:text-4xl font-black uppercase">
                         Descubra como <br />
                         <span className="text-tema">ganhar em dólar</span>
                         <br /> postando vídeos virais
                      </h1>
-                     <p className="text-2xl mb-35 mx-50">
+                     <p className="text-xl sm:text-2xl mb-10 xl:mb-25 2xl:mb-35 sm:mx-10 md:30 lg:mx-50  text-shadow-lg">
                         <span className="font-semibold">Transforme seu tempo livre em dinheiro!</span> Com nosso{" "}
                         <span className="font-semibold">Pack Viral 2.0</span>, você posta vídeos prontos,{" "}
                         <span className="font-semibold text-tema">pega milhões de visualizações</span> e começa a receber em dólar e tudo de
@@ -40,7 +47,7 @@ export default function Home() {
                   <Image
                      width={857}
                      height={682}
-                     className="mb-37 self-baseline"
+                     className="mb-10 xl:mb-37 self-baseline"
                      src="/img/ilustracao.avif"
                      alt="Foto demonstrando os bônus que serão adquiridos ao realizar o trabalho"
                   />
@@ -50,14 +57,13 @@ export default function Home() {
                </Container>
             </div>
             {/* Vídeo de demonstração */}
-            {/* TODO: Mais tarde implementar um poster muito mais melhor */}
-            {/* TODO: Estudar mais sobre a API em https://next-video.dev/docs#main */}
-            <div className="mt-6 flex flex-col items-center">
+            <div className="mt-6 flex flex-col items-center text-center">
                <h6 className="font-bold text-2xl mb-8">Entenda melhor no vídeo abaixo:</h6>
                <VideoPlayer />
             </div>
          </section>
          {/* Seção dos nichos em alta */}
+         {/* TODO: Finalizar a responsividade da seção dos nichos em alta  */}
          <section>
             <Container className="flex flex-col items-center mt-25 mb-17">
                <h2 className="font-black text-4xl mb-9">Temos Todos Os Nichos em Alta 🔥</h2>
@@ -73,6 +79,7 @@ export default function Home() {
             </Container>
          </section>
          {/* Seção do que mudou no pack viral */}
+         {/* TODO: Finalizar a responsividade da seção do que mudou no pack viral  */}
          <section>
             <Container className="flex flex-col items-center mb-17">
                <h3 className="font-bold text-3xl text-center mb-7">
@@ -88,6 +95,7 @@ export default function Home() {
             </Container>
          </section>
          {/* Seção do que mais o cliente irá receber */}
+         {/* TODO: Finalizar a responsividade da seção do que mais o cliente irá receber  */}
          <section>
             <Container className="flex flex-col items-center mb-24">
                <h3 className="font-bold text-4xl mb-9">Veja o que você vai receber a mais:</h3>
@@ -102,6 +110,7 @@ export default function Home() {
             </Container>
          </section>
          {/* Seção dos testemunhos dos clientes */}
+         {/* TODO: Finalizar a responsividade da seção dos testemunhos dos clientes  */}
          <section>
             <Container className="flex flex-col items-center mb-36">
                <h3 className="font-black text-4xl text-center mb-12">
@@ -111,6 +120,7 @@ export default function Home() {
             </Container>
          </section>
          {/* Seção do bônus que será recebido */}
+         {/* TODO: Finalizar a responsividade da seção do bônus que será recebido  */}
          <section>
             <Container className="flex flex-col items-center mb-16">
                <h5 className="underline font-black text-4xl mb-12">
@@ -132,6 +142,7 @@ export default function Home() {
             </Container>
          </section>
          {/* Seção dos planos do curso */}
+         {/* TODO: Finalizar a responsividade da seção dos planos do curso  */}
          <section>
             <Container className="flex flex-col items-center text-center">
                <h6 className="text-tema font-bold text-4xl">97% das pessoas já aproveitaram essa oferta, você vai ficar de fora?</h6>
@@ -171,6 +182,7 @@ export default function Home() {
             </Container>
          </section>
          {/* Seção do selo de garantia do curso */}
+         {/* TODO: Finalizar a responsividade da seção do selo de garantia do curso  */}
          <section>
             <Container className="flex flex-col items-center gap-14 py-30 text-center">
                <Image
@@ -191,6 +203,7 @@ export default function Home() {
          {/* Separador */}
          <hr className="text-tema border-2" />
          {/* Seção das dúvidas frequentes */}
+         {/* TODO: Finalizar a responsividade da seção das dúvidas frequentes  */}
          <section>
             <Container className="text-center py-30">
                <h6 className="mb-15 text-5xl font-black">DÚVIDAS FREQUENTES</h6>
@@ -201,6 +214,7 @@ export default function Home() {
          </section>
          <hr className="text-tema border-2" />
          {/* Seção do CTA para o whatsapp */}
+         {/* TODO: Finalizar a responsividade da seção do CTA para o whatsapp  */}
          <section>
             <Container className="flex flex-col items-center py-20 text-center gap-8">
                <h6 className="text-3xl font-semibold">Ainda ficou com alguma dúvida que você não encontrou a resposta acima?</h6>
