@@ -57,7 +57,7 @@ export default function Home() {
             </div>
             {/* Vídeo de demonstração */}
             <div className="mt-6 flex flex-col items-center text-center">
-               <h6 className="font-bold text-xl sm:text-2xl mb-8">Entenda melhor no vídeo abaixo:</h6>
+               <h6 className="font-bold text-xl sm:text-3xl mb-8">Entenda melhor no vídeo abaixo:</h6>
                <VideoPlayer />
             </div>
          </section>
@@ -79,16 +79,15 @@ export default function Home() {
             </Container>
          </section>
          {/* Seção do que mudou no pack viral */}
-         {/* TODO: Finalizar a responsividade da seção do que mudou no pack viral  */}
          <section>
             <Container className="flex flex-col items-center mb-17">
-               <h3 className="font-bold text-3xl text-center mb-7">
+               <h3 className="font-bold text-2xl sm:text-3xl text-center mb-7">
                   O que mudou no <span className="text-tema">Pack Viral 2.0?</span>
                </h3>
-               <div className="flex flex-col gap-3 text-2xl">
+               <div className="flex flex-col gap-3 sm:text-xl sm:mx-15 md:text-2xl">
                   {oqueMudouNoCurso.map((v, k) => (
                      <div className="flex items-center gap-2" key={k}>
-                        <SquareCheck className="text-black bg-tema rounded " /> <p>{v}</p>
+                        <SquareCheck className="text-black bg-tema rounded shrink-0 " /> <p>{v}</p>
                      </div>
                   ))}
                </div>
