@@ -137,15 +137,14 @@ export default function Home() {
             </Container>
          </section>
          {/* Seção dos planos do curso */}
-         {/* TODO: Finalizar a responsividade da seção dos planos do curso  */}
          <section>
             <Container className="flex flex-col items-center text-center">
-               <h6 className="text-tema font-bold text-4xl">97% das pessoas já aproveitaram essa oferta, você vai ficar de fora?</h6>
+               <h6 className="text-tema font-bold text-2xl sm:text-3xl md:text-4xl">97% das pessoas já aproveitaram essa oferta, você vai ficar de fora?</h6>
                <ProgressBar />
-               <p className="underline text-red-600 font font-semibold text-2xl uppercase">(Provavelmente termina hoje)</p>
-               <h5 className="font-black text-4xl mt-20">Chegou A Hora de De Conhecer os Planos</h5>
-               <CircleArrowDown className="size-13 bg-tema rounded-full p-1.5 mt-11 mb-10" />
-               <div className="grid grid-cols-2 gap-9 *:rounded-4xl text-center *:shadow-orange-300 *:border-4 *:border-orange-400 *:shadow-md *:p-6 *:py-8 relative">
+               <p className="underline text-red-600 font font-semibold text-xl sm:text-2xl uppercase">(Provavelmente termina hoje)</p>
+               <h5 className="font-black text-2xl sm:text-3xl md:text-4xl mt-20">Chegou A Hora de De Conhecer os Planos</h5>
+               <CircleArrowDown className="size-10 sm:size-13 bg-tema rounded-full p-1.5 mt-6 sm:mt-11 mb-10" />
+               <div className="grid grid-cols-1 md:grid-cols-2 gap-9 *:rounded-4xl text-center *:shadow-orange-300 *:border-4 *:border-orange-400 *:shadow-md *:p-6 *:py-8 relative">
                   {/* Plano Premium */}
                   <CardPlano
                      foto="/img/planos/premium.avif"

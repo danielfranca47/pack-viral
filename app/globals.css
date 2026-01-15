@@ -19,5 +19,10 @@ body {
 /* Custom */
 .sombraBtn {
    box-shadow: 1 1 75px #df5c0a;
-   flex: ;
+}
+
+@media screen and (max-width: 1000px) {
+   .sombraBtn {
+      box-shadow: 1 1 35px #df5c0a;
+   }
 }
