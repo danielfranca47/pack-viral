@@ -208,11 +208,10 @@ export default function Home() {
          </section>
          <hr className="text-tema border-2" />
          {/* Seção do CTA para o whatsapp */}
-         {/* TODO: Finalizar a responsividade da seção do CTA para o whatsapp  */}
          <section>
-            <Container className="flex flex-col items-center py-20 text-center gap-8">
-               <h6 className="text-3xl font-semibold">Ainda ficou com alguma dúvida que você não encontrou a resposta acima?</h6>
-               <p className="text-2xl">Fale conosco no WhatsApp clicando no botão abaixo:</p>
+            <Container className="flex flex-col items-center py-15 lg:py-20 2xl:py-30 text-center gap-8">
+               <h6 className="text-2xl sm:text-3xl font-semibold">Ainda ficou com alguma dúvida que você não encontrou a resposta acima?</h6>
+               <p className="text-xl sm:text-2xl">Fale conosco no WhatsApp clicando no botão abaixo:</p>
                <Button className="uppercase">Tire suas dúvidas</Button>
             </Container>
          </section>
