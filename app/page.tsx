@@ -93,15 +93,14 @@ export default function Home() {
             </Container>
          </section>
          {/* Seção do que mais o cliente irá receber */}
-         {/* TODO: Finalizar a responsividade da seção do que mais o cliente irá receber  */}
          <section>
             <Container className="flex flex-col items-center mb-24">
-               <h3 className="font-bold text-4xl mb-9">Veja o que você vai receber a mais:</h3>
-               <div className="flex flex-col gap-7 mx-50">
+               <h3 className="font-bold text-2xl sm:text-3xl lg:text-4xl mb-9 text-center">Veja o que você vai receber a mais:</h3>
+               <div className="flex flex-col gap-7 sm:mx-10 md:mx-20 xl:mx-50">
                   {oqueIraReceber.map(({ titulo, descricao }, k) => (
-                     <div className="flex flex-col gap-2 text-2xl" key={k}>
-                        <h6 className="text-tema font-bold">{titulo}</h6>
-                        <p>{descricao}</p>
+                     <div className="flex flex-col gap-2 " key={k}>
+                        <h6 className="text-tema font-bold text-xl sm:text-2xl">{titulo}</h6>
+                        <p className="text-lg sm:text-2xl">{descricao}</p>
                      </div>
                   ))}
                </div>
