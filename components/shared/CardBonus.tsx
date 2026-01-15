@@ -1,4 +1,4 @@
-import { IBonus } from "@/data/data";
+import { IBonus } from "@/types/types";
 import Image from "next/image";
 
 const CardBonus = ({ titulo, descricao, foto, precoAnterior, precoAtual, chave }: IBonus) => {

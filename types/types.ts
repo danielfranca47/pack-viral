@@ -1,3 +1,4 @@
+/* Dados */
 export interface INichoEmAlta {
    /** Tamanho da imagem: 260 x 146 */
    foto: string;
