@@ -94,8 +94,8 @@ export default function Home() {
          </section>
          {/* Seção do que mais o cliente irá receber */}
          <section>
-            <Container className="flex flex-col items-center mb-24">
-               <h3 className="font-bold text-2xl sm:text-3xl lg:text-4xl mb-9 text-center">Veja o que você vai receber a mais:</h3>
+            <Container className="flex flex-col items-center mb-16 sm:mb-24">
+               <h3 className="font-bold text-2xl sm:text-3xl lg:text-4xl mb-7 sm:mb-9 text-center">Veja o que você vai receber a mais:</h3>
                <div className="flex flex-col gap-7 sm:mx-10 md:mx-20 xl:mx-50">
                   {oqueIraReceber.map(({ titulo, descricao }, k) => (
                      <div className="flex flex-col gap-2 " key={k}>
@@ -107,10 +107,9 @@ export default function Home() {
             </Container>
          </section>
          {/* Seção dos testemunhos dos clientes */}
-         {/* TODO: Finalizar a responsividade da seção dos testemunhos dos clientes  */}
          <section>
-            <Container className="flex flex-col items-center mb-36">
-               <h3 className="font-black text-4xl text-center mb-12">
+            <Container className="flex flex-col items-center mb-15 sm:mb-36">
+               <h3 className="font-black text-2xl sm:text-3xl md:text-4xl text-center mb-8 sm:mb-12">
                   Temos mais de <span className="text-tema">10.000 alunos</span> e aqui está os feedbacks de alguns deles:
                </h3>
                <EmblaCarousel />

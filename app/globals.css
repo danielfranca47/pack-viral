@@ -19,17 +19,5 @@ body {
 /* Custom */
 .sombraBtn {
    box-shadow: 1 1 75px #df5c0a;
-}
-
-/* Embla Carousel */
-.embla {
-   overflow: hidden;
-}
-.embla__container {
-   display: flex;
-   gap: 20px;
-}
-.embla__slide {
-   flex: 0 0 fit-content;
-   min-width: 0;
+   flex: ;
 }
