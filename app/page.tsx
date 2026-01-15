@@ -179,7 +179,7 @@ export default function Home() {
          </section>
          {/* Seção do selo de garantia do curso */}
          <section>
-            <Container className="flex flex-col items-center gap-9 sm:gap-14 py-30 text-center">
+            <Container className="flex flex-col items-center gap-9 sm:gap-14 py-20 sm:py-30 text-center">
                <Image
                   className="size-56"
                   width={426}
@@ -198,11 +198,10 @@ export default function Home() {
          {/* Separador */}
          <hr className="text-tema border-2" />
          {/* Seção das dúvidas frequentes */}
-         {/* TODO: Finalizar a responsividade da seção das dúvidas frequentes  */}
          <section>
-            <Container className="text-center py-30">
-               <h6 className="mb-15 text-5xl font-black">DÚVIDAS FREQUENTES</h6>
-               <div className="text-start mx-45">
+            <Container className="text-center py-20 sm:py-30">
+               <h6 className="mb-7 sm:mb-15 text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-black">DÚVIDAS FREQUENTES</h6>
+               <div className="text-start sm:mx-15 md:mx-30 lg:mx-45">
                   <Accordion perguntasRespostas={perguntaResposta} />
                </div>
             </Container>
