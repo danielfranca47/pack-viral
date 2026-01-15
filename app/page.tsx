@@ -139,7 +139,9 @@ export default function Home() {
          {/* Seção dos planos do curso */}
          <section>
             <Container className="flex flex-col items-center text-center">
-               <h6 className="text-tema font-bold text-2xl sm:text-3xl md:text-4xl">97% das pessoas já aproveitaram essa oferta, você vai ficar de fora?</h6>
+               <h6 className="text-tema font-bold text-2xl sm:text-3xl md:text-4xl">
+                  97% das pessoas já aproveitaram essa oferta, você vai ficar de fora?
+               </h6>
                <ProgressBar />
                <p className="underline text-red-600 font font-semibold text-xl sm:text-2xl uppercase">(Provavelmente termina hoje)</p>
                <h5 className="font-black text-2xl sm:text-3xl md:text-4xl mt-20">Chegou A Hora de De Conhecer os Planos</h5>
@@ -176,9 +178,8 @@ export default function Home() {
             </Container>
          </section>
          {/* Seção do selo de garantia do curso */}
-         {/* TODO: Finalizar a responsividade da seção do selo de garantia do curso  */}
          <section>
-            <Container className="flex flex-col items-center gap-14 py-30 text-center">
+            <Container className="flex flex-col items-center gap-9 sm:gap-14 py-30 text-center">
                <Image
                   className="size-56"
                   width={426}
@@ -186,8 +187,8 @@ export default function Home() {
                   src="/img/selo-garantia.avif"
                   alt="Ilustração do selo de garantia de 7 dias"
                />
-               <h6 className="text-4xl font-black">Satisfação garantida</h6>
-               <p className="font-light text-2xl mx-80">
+               <h6 className=" text-2xl sm:text-3xl md:text-4xl font-black">Satisfação garantida</h6>
+               <p className="font-light text-xl sm:text-2xl sm:mx-5 md:mx-20 xl:mx-80">
                   Eu ofereço uma garantia de 7 dias para você experimentar o conteúdo, se não ficar satisfeito com o conteúdo ou se você se
                   arrepender por qualquer outro motivo, basta me enviar um e-mail e eu devolvo 100% do seu dinheiro. Sem questionamentos e sem
                   burocracia.
