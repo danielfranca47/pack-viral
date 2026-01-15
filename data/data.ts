@@ -1,8 +1,5 @@
-interface INichoEmAlta {
-   /** Tamanho da imagem: 260 x 146 */
-   foto: string;
-   titulo: string;
-}
+import { IBonus, INichoEmAlta, IOqueIraReceber, IPerguntaResposta } from "@/types/types";
+
 export const nichosEmAlta: INichoEmAlta[] = [
    { titulo: "Videos do desenho do Simpsons. Muito bom para monetizar a conta muito rápido!", foto: "/img/nichosEmAlta/1.png" },
    { titulo: "Poste cortes de Filmes e Séries. Um dos melhores nichos para obter resultados rápidos.", foto: "/img/nichosEmAlta/2.png" },
@@ -28,10 +25,6 @@ export const oqueMudouNoCurso = [
    "Suporte 24 horas para nunca ficar perdido.",
 ];
 
-interface IOqueIraReceber {
-   titulo: string;
-   descricao: string;
-}
 export const oqueIraReceber: IOqueIraReceber[] = [
    {
       titulo: "⏰ Melhores Horários para Postar",
@@ -69,16 +62,6 @@ export const testemunhos = [
    "/img/testemunhos/9.avif",
 ];
 
-export interface IBonus {
-   titulo: string;
-   descricao: string;
-   precoAnterior: number | string;
-   precoAtual: number | string;
-   /** Tamanho da imagem: X x X */
-   foto: string;
-   /** Somente utilizar no componente CardBonus */
-   chave?: number;
-}
 export const listaDeBonus: IBonus[] = [
    {
       titulo: "Treinamento Completo TikTok Cash",
@@ -118,10 +101,6 @@ export const listaDeBonus: IBonus[] = [
    },
 ];
 
-export interface IPerguntaResposta {
-   pergunta: string;
-   resposta: string;
-}
 export const perguntaResposta: IPerguntaResposta[] = [
    {
       pergunta: "Os vídeos têm direitos autorais?",

@@ -33,11 +33,10 @@ export default function Home() {
                         <span className="text-tema">ganhar em dólar</span>
                         <br /> postando vídeos virais
                      </h1>
-                     <p className="text-xl sm:text-2xl mb-10 xl:mb-25 2xl:mb-35 sm:mx-10 md:30 lg:mx-50  text-shadow-lg">
-                        <span className="font-semibold">Transforme seu tempo livre em dinheiro!</span> Com nosso{" "}
-                        <span className="font-semibold">Pack Viral 2.0</span>, você posta vídeos prontos,{" "}
-                        <span className="font-semibold text-tema">pega milhões de visualizações</span> e começa a receber em dólar e tudo de
-                        forma simples e rápida.
+                     <p className="text-xl font-semibold sm:text-2xl mb-10 xl:mb-25 2xl:mb-35 sm:mx-10 md:30 lg:mx-50  text-shadow-lg">
+                        <span>Transforme seu tempo livre em dinheiro!</span> Com nosso <span>Pack Viral 2.0</span>, você posta vídeos prontos,{" "}
+                        <span className="text-tema">pega milhões de visualizações</span> e começa a receber em dólar e tudo de forma simples e
+                        rápida.
                      </p>
                   </div>
 
