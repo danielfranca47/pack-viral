@@ -116,13 +116,12 @@ export default function Home() {
             </Container>
          </section>
          {/* Seção do bônus que será recebido */}
-         {/* TODO: Finalizar a responsividade da seção do bônus que será recebido  */}
          <section>
             <Container className="flex flex-col items-center mb-16">
-               <h5 className="underline font-black text-4xl mb-12">
+               <h5 className="underline text-center font-black text-2xl sm:text-3xl md:text-4xl mb-8 sm:mb-12">
                   BÔNUS SOMENTE PARA OS <span className="text-tema">300 PRIMEIROS…</span>
                </h5>
-               <div className="grid grid-cols-2 gap-8">
+               <div className="grid grid-cols-1 sm:mx-8 md:mx-0 md:grid-cols-2 gap-8">
                   {listaDeBonus.map((v, k) => (
                      <CardBonus
                         titulo={v.titulo}
