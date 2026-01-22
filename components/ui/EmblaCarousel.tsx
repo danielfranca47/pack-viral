@@ -2,9 +2,16 @@
 import { testemunhos } from "@/data/data";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
+import Autoplay from "embla-carousel-autoplay";
+import { useEffect } from "react";
 
 const EmblaCarousel = () => {
-   const [emblaRef] = useEmblaCarousel();
+   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 2000 })]);
+
+   useEffect(() => {
+      if (!emblaApi) return;
+      emblaApi.plugins().autoplay?.play();
+   }, [emblaApi]);
 
    return (
       <div className="embla mask-r-from-90% overflow-hidden" ref={emblaRef}>
