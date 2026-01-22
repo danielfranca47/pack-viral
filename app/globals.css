@@ -2,7 +2,7 @@
 
 :root {
    --background: #000000;
-   --tema: #ff7722;
+   --tema: #41f557;
 }
 
 @theme inline {
@@ -17,11 +17,11 @@ body {
 
 /* Custom */
 .sombraBtn {
-   box-shadow: 1 1 75px #df5c0a;
+   box-shadow: 1 1 75px #4fbd17;
 }
 
 @media screen and (max-width: 1000px) {
    .sombraBtn {
-      box-shadow: 1 1 35px #df5c0a;
+      box-shadow: 1 1 35px #4fbd17;
    }
 }
