@@ -6,7 +6,9 @@ import Autoplay from "embla-carousel-autoplay";
 import { useEffect } from "react";
 
 const EmblaCarousel = () => {
-   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 2000 })]);
+   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
+      Autoplay({ delay: 2000, stopOnInteraction: false, stopOnMouseEnter: false, stopOnFocusIn: false }),
+   ]);
 
    useEffect(() => {
       if (!emblaApi) return;
