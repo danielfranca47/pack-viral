@@ -146,7 +146,7 @@ export default function Home() {
                <p className="underline text-red-600 font font-semibold text-xl sm:text-2xl uppercase">(Provavelmente termina hoje)</p>
                <h5 className="font-black text-2xl sm:text-3xl md:text-4xl mt-20">Chegou A Hora de De Conhecer os Planos</h5>
                <CircleArrowDown className="size-10 sm:size-13 bg-tema rounded-full p-1.5 mt-6 sm:mt-11 mb-10" />
-               <div className="grid grid-cols-1 md:grid-cols-2 gap-9 *:rounded-4xl text-center *:shadow-orange-300 *:border-4 *:border-orange-400 *:shadow-md *:p-6 *:py-8 relative">
+               <div className="grid grid-cols-1 md:grid-cols-2 gap-9 *:rounded-4xl text-center *:shadow-orange-300 *:border-4 *:border-green-400 *:shadow-md *:p-6 *:py-8 relative">
                   {/* Plano Premium */}
                   <CardPlano
                      foto="/img/planos/premium.avif"

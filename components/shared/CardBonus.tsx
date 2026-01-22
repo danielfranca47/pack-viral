@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const CardBonus = ({ titulo, descricao, foto, precoAnterior, precoAtual, chave }: IBonus) => {
    return (
-      <div className="shadow-orange-300 border-4 border-orange-400 shadow-md flex flex-col mx-auto rounded-3xl">
+      <div className="shadow-green-300 border-4 border-green-400 shadow-md flex flex-col mx-auto rounded-3xl">
          <Image width={1024} height={819} className="w-auto h-auto" src={foto} alt="Ilustração demonstrando o bônus que será recebido " />
          <div className="p-4 sm:p-7 bg-zinc-950 text-xl lg:text-2xl rounded-[inherit]">
             <h6 className="italic text-tema font-bold text-[17px] sm:text-[19px] underline">Bônus #0{Number(chave) + 1}</h6>
