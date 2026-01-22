@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pack Viral Landing Page
 
-## Getting Started
+Transforme seu tempo livre em dinheiro! Com nosso Pack Viral 2.0, você posta vídeos prontos, pega milhões de visualizações e começa a receber em dólar e tudo de forma simples e rápida. Descubra como ganhar em dólar postando vídeos virais e maximize seu potencial de renda com nossa plataforma intuitiva e ferramentas comprovadas.
 
-First, run the development server:
+## Tecnologias Utilizadas
+
+Este projeto utiliza as seguintes tecnologias:
+
+- **Next.js**: Um framework React para construção de aplicações web otimizadas e escaláveis.
+- **React**: Biblioteca JavaScript para construção de interfaces de usuário.
+- **CSS**: Para estilização e layout da aplicação.
+- **Node.js**: Ambiente de execução para JavaScript no lado do servidor.
+- **TypeScript**: Um superconjunto de JavaScript que adiciona tipagem estática.
+- **Tailwind CSS**: Um framework CSS utilitário para estilização rápida e responsiva.
+- **ESLint**: Ferramenta para identificar e corrigir problemas em código JavaScript.
+
+## Boas Práticas
+
+- **Componentização**: Divida a interface em componentes reutilizáveis para facilitar a manutenção e a escalabilidade.
+- **Acessibilidade**: Certifique-se de que a aplicação seja acessível a todos os usuários, seguindo as diretrizes de acessibilidade.
+- **SEO**: Utilize as funcionalidades do Next.js para otimizar a aplicação para motores de busca, como a geração de páginas estáticas e a configuração de metadados.
+- **Testes**: Implemente testes unitários e de integração para garantir a qualidade do código e a funcionalidade da aplicação.
+
+## Começando
+
+Para rodar o servidor de desenvolvimento, execute:
 
 ```bash
 npm run dev
-# or
+# ou
 yarn dev
-# or
+# ou
 pnpm dev
-# or
+# ou
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000](http://localhost:3000) no seu navegador para ver o resultado.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Editando o Projeto
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Editando Imagens
 
-## Learn More
+As imagens estão localizadas no diretório `public/img/`. Você pode substituir as imagens existentes ou adicionar novas. Certifique-se de que os nomes das imagens correspondam aos referenciados no código.
 
-To learn more about Next.js, take a look at the following resources:
+### Editando Cores Globais
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Os estilos globais podem ser modificados no arquivo `globals.css` localizado no diretório `app/`. Você pode alterar cores, fontes e outros estilos para atender às suas necessidades de design.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Editando a Página
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Você pode começar a editar a página principal modificando `app/page.tsx`. A página se atualiza automaticamente à medida que você edita o arquivo.
