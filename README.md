@@ -1,5 +1,6 @@
-# Pack Viral Landing Page
-Transforme seu tempo livre em dinheiro! Com nosso Pack Viral 2.0, você posta vídeos prontos, pega milhões de visualizações e começa a receber em dólar e tudo de forma simples e rápida. Descubra como ganhar em dólar postando vídeos virais e maximize seu potencial de renda com nossa plataforma intuitiva e ferramentas comprovadas.
+# Pack Império Viral 2.0 Landing Page
+
+Transforme seu tempo livre em dinheiro! Com nosso Pack Império Viral 2.0, você posta vídeos prontos, pega milhões de visualizações e começa a receber em dólar e tudo de forma simples e rápida. Descubra como ganhar em dólar postando vídeos virais e maximize seu potencial de renda com nossa plataforma intuitiva e ferramentas comprovadas.
 
 ![pack-viral](https://github.com/user-attachments/assets/86f42818-74c5-4398-9402-e3839ff2e930)
 

@@ -71,7 +71,7 @@ export const listaDeBonus: IBonus[] = [
       precoAtual: "Grátis",
    },
    {
-      titulo: "Pack Viral 1.0",
+      titulo: "Pack Império Viral 2.0 1.0",
       descricao: "Centenas de vídeos com alto potencial de viralização para turbinar seu engajamento e crescer rápido.",
 
       foto: "/img/bonus/2.avif",

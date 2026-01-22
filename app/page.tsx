@@ -34,9 +34,9 @@ export default function Home() {
                         <br /> postando vídeos virais
                      </h1>
                      <p className="text-xl font-semibold sm:text-2xl mb-10 xl:mb-25 2xl:mb-35 sm:mx-10 md:30 lg:mx-50  text-shadow-lg">
-                        <span>Transforme seu tempo livre em dinheiro!</span> Com nosso <span>Pack Viral 2.0</span>, você posta vídeos prontos,{" "}
-                        <span className="text-tema">pega milhões de visualizações</span> e começa a receber em dólar e tudo de forma simples e
-                        rápida.
+                        <span>Transforme seu tempo livre em dinheiro!</span> Com nosso <span>Pack Império Viral 2.0</span>, você posta vídeos
+                        prontos, <span className="text-tema">pega milhões de visualizações</span> e começa a receber em dólar e tudo de forma
+                        simples e rápida.
                      </p>
                   </div>
 
@@ -77,11 +77,11 @@ export default function Home() {
                </p>
             </Container>
          </section>
-         {/* Seção do que mudou no pack viral */}
+         {/* Seção do que mudou no pack império viral 2.0 */}
          <section>
             <Container className="flex flex-col items-center mb-17">
                <h3 className="font-bold text-2xl sm:text-3xl text-center mb-7">
-                  O que mudou no <span className="text-tema">Pack Viral 2.0?</span>
+                  O que mudou no <span className="text-tema">Pack Império Viral 2.0?</span>
                </h3>
                <div className="flex flex-col gap-3 sm:text-xl sm:mx-15 md:text-2xl">
                   {oqueMudouNoCurso.map((v, k) => (
@@ -154,12 +154,12 @@ export default function Home() {
                      modo="premium"
                      preco={47}
                      destaques={[
-                        "Pack Viral 2.0",
+                        "Pack Império Viral 2.0",
                         "+70.000 Vídeos Virais",
                         "Acesso Imediato",
                         "7 Dias de Garantia",
                         "Bônus 01# Treinamento Completo Tiktok Cash",
-                        "Bônus 02# Pack Viral 1.0",
+                        "Bônus 02# Pack Império Viral 2.0 1.0",
                         "Bônus 03# Curso Google Veo3 + 500 Vídeos Prontos",
                         "Bônus 04# Tiktok Shop",
                         "Bônus 05# Comunidade VisionClass",
@@ -172,7 +172,7 @@ export default function Home() {
                      cta="Quero Comprar Essa Oferta!"
                      modo="iniciante"
                      preco={27}
-                     destaques={["Pack Viral 2.0", "+10.000 Vídeos Virais", "Acesso Imediato", "7 Dias de Garantia"]}
+                     destaques={["Pack Império Viral 2.0", "+10.000 Vídeos Virais", "Acesso Imediato", "7 Dias de Garantia"]}
                   />
                </div>
             </Container>
