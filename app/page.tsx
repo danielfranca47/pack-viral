@@ -159,10 +159,10 @@ export default function Home() {
                         "Acesso Imediato",
                         "7 Dias de Garantia",
                         "Bônus 01# Treinamento Completo Tiktok Cash",
-                        "Bônus 02# Pack Império Viral 2.0 1.0",
+                        "Bônus 02# Pack Império Viral 2.0",
                         "Bônus 03# Curso Google Veo3 + 500 Vídeos Prontos",
                         "Bônus 04# Tiktok Shop",
-                        "Bônus 05# Comunidade VisionClass",
+                        "Bônus 05# Comunidade EmpireClass",
                      ]}
                   />
                   {/* Plano Iniciante */}

@@ -93,7 +93,7 @@ export const listaDeBonus: IBonus[] = [
       precoAtual: "Grátis",
    },
    {
-      titulo: "Comunidade VisionClass:",
+      titulo: "Comunidade EmpireClass:",
       descricao: "Comunidade com todos alunos com desafios e troca de networking.",
       foto: "/img/bonus/5.avif",
       precoAnterior: "R$49,90",
