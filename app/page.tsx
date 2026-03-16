@@ -46,7 +46,7 @@ export default function Home() {
                      width={857}
                      height={682}
                      className="mb-10 xl:mb-37 self-baseline"
-                     src="/img/ilustracao.avif"
+                     src="/img/ilustracao.png"
                      alt="Foto demonstrando os bônus que serão adquiridos ao realizar o trabalho"
                   />
 
@@ -149,7 +149,7 @@ export default function Home() {
                <div className="grid grid-cols-1 md:grid-cols-2 gap-9 *:rounded-4xl text-center *:shadow-orange-300 *:border-4 *:border-green-400 *:shadow-md *:p-6 *:py-8 relative">
                   {/* Plano Premium */}
                   <CardPlano
-                     foto="/img/planos/premium.avif"
+                     foto="/img/planos/premium.png"
                      cta="SIM! QUERO ESSA SUPER OFERTA!"
                      modo="premium"
                      preco={47}
@@ -168,7 +168,7 @@ export default function Home() {
                   {/* Plano Iniciante */}
 
                   <CardPlano
-                     foto="/img/planos/iniciante.avif"
+                     foto="/img/planos/iniciante.png"
                      cta="Quero Comprar Essa Oferta!"
                      modo="iniciante"
                      preco={27}
