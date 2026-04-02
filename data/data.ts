@@ -55,7 +55,7 @@ export const testemunhos = [
    "/img/testemunhos/2.avif",
    "/img/testemunhos/3.avif",
    "/img/testemunhos/4.avif",
-   "/img/testemunhos/5.avif",
+   "/img/testemunhos/5.png",
    "/img/testemunhos/6.avif",
    "/img/testemunhos/7.avif",
    "/img/testemunhos/8.avif",
@@ -95,7 +95,7 @@ export const listaDeBonus: IBonus[] = [
    {
       titulo: "Comunidade EmpireClass:",
       descricao: "Comunidade com todos alunos com desafios e troca de networking.",
-      foto: "/img/bonus/5.avif",
+      foto: "/img/bonus/5.png",
       precoAnterior: "R$49,90",
       precoAtual: "Grátis",
    },
