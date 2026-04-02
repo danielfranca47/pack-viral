@@ -1,12 +1,43 @@
-import Video from "next-video";
+"use client";
+import { VolumeOff } from "lucide-react";
+import Player from "next-video";
+import { useRef, useState } from "react";
 
-const testUrl = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4";
-const testThumbnail = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerFun.jpg";
-
-// TODO: Mais tarde implementar um poster muito mais melhor
-// TODO: Estudar mais sobre a API em https://next-video.dev/docs#main
+const videoUrl = "https://res.cloudinary.com/dtra2u08q/video/upload/v1775124216/Cakto_packviral.online_nbijpd.mp4";
 
 const VideoPlayer = () => {
-   return <Video width={900} src={testUrl} className="**:mx-auto aspect-auto! *:border-2 *:w-[80%]! md:*:w-150! xl:*:w-225!" />;
+   const [clicaste, setClicaste] = useState(false);
+   const videoRef = useRef<HTMLVideoElement | null>(null);
+
+   function handleButtonClick() {
+      if (videoRef?.current) {
+         setClicaste(true);
+         videoRef.current.muted = false;
+         videoRef.current.volume = 1;
+         videoRef.current.currentTime = -1;
+      }
+   }
+
+   return (
+      <div className="w-fit relative flex items-center justify-center">
+         <Player
+            autoPlay
+            muted
+            ref={videoRef}
+            src={videoUrl}
+            className="**:mx-auto aspect-auto! *:border *:border-tema *:w-[85%]! md:*:w-120! xl:*:w-130!"
+         />
+         {!clicaste && (
+            <div
+               onClick={handleButtonClick}
+               className="absolute text-center flex flex-col items-center bg-violet-500 p-5 gap-2 cursor-pointer border rounded opacity-90"
+            >
+               <p className="font-semibold">Seu vídeo já começou</p>
+               <VolumeOff className="size-12" />
+               <p>Clique para ouvir</p>
+            </div>
+         )}
+      </div>
+   );
 };
 export default VideoPlayer;
