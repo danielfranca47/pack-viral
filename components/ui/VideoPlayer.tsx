@@ -107,8 +107,8 @@ const VideoPlayer = () => {
                </div>
             ) : (
                <div className="absolute inset-x-0.5 bottom-0.5  bg-black  bordert  self-end">
-                  <div className=" bg-violet-500 transition h-12" style={{ width: `${progresso}%` }}>
-                     {" "}
+                  <div className=" bg-violet-500 transition h-12 flex items-center justify-end pe-2" style={{ width: `${progresso}%` }}>
+                     {progresso > 8 && `${progresso.toFixed(0)}%`}
                   </div>
                </div>
             )}
