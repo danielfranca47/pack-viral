@@ -5,10 +5,13 @@ import { useEffect, useRef, useState } from "react";
 
 const videoUrl = "https://res.cloudinary.com/dtra2u08q/video/upload/v1775124216/Cakto_packviral.online_nbijpd.mp4";
 
+// Caso queira escalar ler: https://next-video.dev/docs#main
+
 const VideoPlayer = () => {
    const [clicaste, setClicaste] = useState(false);
    const [assistiu, setAssistiu] = useState(false);
    const [analiseConcluida, setAnaliseConcluida] = useState(false);
+   const [progresso, setProgresso] = useState(10);
 
    const videoRef = useRef<HTMLVideoElement | null>(null);
 
@@ -54,7 +57,7 @@ const VideoPlayer = () => {
       const atualizar = setInterval(() => {
          console.log(String(videoRef?.current?.currentTime));
          localStorage.setItem("tempoAssistido", String(videoRef?.current?.currentTime));
-      }, 10000);
+      }, 8000);
 
       // Clean-up do timer
       return () => {
@@ -65,13 +68,19 @@ const VideoPlayer = () => {
    /* Renderiza o player após verificar se o usuário assistiu */
    return (
       analiseConcluida && (
-         <div className="w-fit relative flex items-center justify-center">
+         <div className="w-fit relative flex items-center justify-center cursor-pointer">
             <Player
                autoPlay
                muted
+               style={{ opacity: "0 !important" }}
                ref={videoRef}
                src={videoUrl}
                className="**:mx-auto aspect-auto! *:border *:border-tema *:w-[85%]! md:*:w-120! xl:*:w-130!"
+               onTimeUpdate={(e) => {
+                  // Calcular a percentagem do progresso de acordo com a duração total e o tempo actual do vídeo
+                  const progresso = (e.currentTarget.currentTime / e.currentTarget.duration) * 100;
+                  setProgresso(progresso);
+               }}
             />
 
             {assistiu ? (
@@ -87,17 +96,21 @@ const VideoPlayer = () => {
                      <span>Assistir do início?</span>
                   </div>
                </div>
+            ) : !clicaste ? (
+               <div
+                  onClick={handleButtonClick}
+                  className="absolute text-center flex flex-col items-center bg-violet-500 p-5 gap-2 cursor-pointer border rounded opacity-90"
+               >
+                  <p className="font-semibold">Seu vídeo já começou</p>
+                  <VolumeOff className="size-12" />
+                  <p>Clique para ouvir</p>
+               </div>
             ) : (
-               !clicaste && (
-                  <div
-                     onClick={handleButtonClick}
-                     className="absolute text-center flex flex-col items-center bg-violet-500 p-5 gap-2 cursor-pointer border rounded opacity-90"
-                  >
-                     <p className="font-semibold">Seu vídeo já começou</p>
-                     <VolumeOff className="size-12" />
-                     <p>Clique para ouvir</p>
+               <div className="absolute inset-x-0.5 bottom-0.5  bg-black  bordert  self-end">
+                  <div className=" bg-violet-500 transition h-12" style={{ width: `${progresso}%` }}>
+                     {" "}
                   </div>
-               )
+               </div>
             )}
          </div>
       )
