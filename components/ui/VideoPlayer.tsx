@@ -68,14 +68,14 @@ const VideoPlayer = () => {
    /* Renderiza o player após verificar se o usuário assistiu */
    return (
       analiseConcluida && (
-         <div className="w-fit relative flex items-center justify-center cursor-pointer">
+         <div className="w-fit relative flex items-center justify-center cursor-pointer mx-4 sm:mx-0">
             <Player
                autoPlay
                muted
                style={{ opacity: "0 !important" }}
                ref={videoRef}
                src={videoUrl}
-               className="**:mx-auto aspect-auto! *:border *:border-tema *:w-[85%]! md:*:w-120! xl:*:w-130!"
+               className="**:mx-auto aspect-auto! *:border *:border-tema *:w-full! md:*:w-120! xl:*:w-130!"
                onTimeUpdate={(e) => {
                   // Calcular a percentagem do progresso de acordo com a duração total e o tempo actual do vídeo
                   const progresso = (e.currentTarget.currentTime / e.currentTarget.duration) * 100;
