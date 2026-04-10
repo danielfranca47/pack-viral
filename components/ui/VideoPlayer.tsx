@@ -12,6 +12,7 @@ const VideoPlayer = () => {
    const [assistiu, setAssistiu] = useState(false);
    const [analiseConcluida, setAnaliseConcluida] = useState(false);
    const [progresso, setProgresso] = useState(10);
+   const [playing, setPlaying] = useState(true);
 
    const videoRef = useRef<HTMLVideoElement | null>(null);
 
@@ -75,6 +76,18 @@ const VideoPlayer = () => {
                style={{ opacity: "0 !important" }}
                ref={videoRef}
                src={videoUrl}
+               onPlay={() => setPlaying}
+               onClick={() => {
+                  if (videoRef?.current) {
+                     if (playing) {
+                        videoRef.current.pause();
+                        setPlaying(false);
+                     } else {
+                        videoRef.current.play();
+                        setPlaying(true);
+                     }
+                  }
+               }}
                className="**:mx-auto aspect-auto! *:border *:border-tema *:w-full! md:*:w-120! xl:*:w-130!"
                onTimeUpdate={(e) => {
                   // Calcular a percentagem do progresso de acordo com a duração total e o tempo actual do vídeo
