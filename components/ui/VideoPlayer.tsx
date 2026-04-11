@@ -15,7 +15,7 @@ const VideoPlayer = () => {
    // Define se a análise do tempo assistido foi concluida
    const [analiseConcluida, setAnaliseConcluida] = useState(false);
    // Define o percentual do progresso do tempo
-   const [progresso, setProgresso] = useState(10);
+   const [progresso, setProgresso] = useState(0);
    // Define se o video está sendo reproduzido
    const [playing, setPlaying] = useState(true);
    // Define se a animação de play ou pause deve ser mostrada
@@ -53,6 +53,16 @@ const VideoPlayer = () => {
          setClicaste(true);
          setVideoTerminou(false);
          videoRef.current.play();
+      }
+   }
+
+   function mapearProgresso(progressoReal: number) {
+      if (progressoReal <= 70) {
+         // aceleração progressiva (ease-out)
+         return Math.pow(progressoReal / 70, 0.5) * 70;
+      } else {
+         // sincronização real
+         return progressoReal;
       }
    }
 
@@ -109,8 +119,8 @@ const VideoPlayer = () => {
                className="**:mx-auto aspect-auto! *:border *:border-tema *:w-full! md:*:w-120! xl:*:w-130!"
                onTimeUpdate={(e) => {
                   // Calcular a percentagem do progresso de acordo com a duração total e o tempo actual do vídeo
-                  const progresso = (e.currentTarget.currentTime / e.currentTarget.duration) * 100;
-                  setProgresso(progresso);
+                  const progressoReal = (e.currentTarget.currentTime / e.currentTarget.duration) * 100;
+                  setProgresso(mapearProgresso(progressoReal));
                }}
             />
 
