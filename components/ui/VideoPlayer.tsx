@@ -20,6 +20,8 @@ const VideoPlayer = () => {
    const [playing, setPlaying] = useState(true);
    // Define se a animação de play ou pause deve ser mostrada
    const [mostrarAnimacaoDePlayOuPause, setMostrarAnimacaoDePlayOuPause] = useState(false);
+   // Define se o vídeo chegou ao fim
+   const [videoTerminou, setVideoTerminou] = useState(false);
 
    const videoRef = useRef<HTMLVideoElement | null>(null);
 
@@ -49,6 +51,8 @@ const VideoPlayer = () => {
          videoRef.current.currentTime = 0;
          setAssistiu(false);
          setClicaste(true);
+         setVideoTerminou(false);
+         videoRef.current.play();
       }
    }
 
@@ -80,6 +84,7 @@ const VideoPlayer = () => {
             <Player
                autoPlay
                muted
+               onEnded={() => setVideoTerminou(true)}
                style={{ opacity: "0 !important" }}
                ref={videoRef}
                src={videoUrl}
@@ -147,6 +152,16 @@ const VideoPlayer = () => {
                         {progresso > 8 && `${progresso.toFixed(0)}%`}
                      </div>
                   </div>
+                  {/* Aviso de que o vídeo acabou */}
+                  {videoTerminou && (
+                     <div
+                        onClick={assistirDoInicio}
+                        className="absolute inset-0 bg-violet-500 flex flex-col items-center justify-center gap-4 px-4"
+                     >
+                        <p className="font-semibold mb-2 lg:text-2xl">Seu vídeo acabou, clique para assistir novamente!</p>
+                        <Repeat className="size-10 lg:size-15" />
+                     </div>
+                  )}
                </>
             )}
          </div>
