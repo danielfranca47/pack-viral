@@ -59,7 +59,7 @@ const VideoPlayer = () => {
    function mapearProgresso(progressoReal: number) {
       if (progressoReal <= 70) {
          // aceleração progressiva (ease-out)
-         return Math.pow(progressoReal / 70, 0.5) * 70;
+         return Math.pow(progressoReal / 70, 0.4) * 70;
       } else {
          // sincronização real
          return progressoReal;
