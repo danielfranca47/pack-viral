@@ -94,6 +94,7 @@ const VideoPlayer = () => {
             <Player
                autoPlay
                muted
+               controls={false}
                onEnded={() => setVideoTerminou(true)}
                style={{ opacity: "0 !important" }}
                ref={videoRef}
@@ -116,7 +117,7 @@ const VideoPlayer = () => {
                      setMostrarAnimacaoDePlayOuPause(false);
                   }, 2000);
                }}
-               className="**:mx-auto aspect-auto! *:border *:border-tema *:w-full! md:*:w-120! xl:*:w-130!"
+               className="**:mx-auto aspect-auto! border border-tema *:border *:border-tema *:w-full! md:*:w-120! xl:*:w-130!"
                onTimeUpdate={(e) => {
                   // Calcular a percentagem do progresso de acordo com a duração total e o tempo actual do vídeo
                   const progressoReal = (e.currentTarget.currentTime / e.currentTarget.duration) * 100;
@@ -157,9 +158,10 @@ const VideoPlayer = () => {
                      </div>
                   )}
                   {/* Barra de progresso */}
-                  <div className="absolute inset-x-0.5 bottom-0.5  bg-black  bordert  self-end">
-                     <div className=" bg-violet-500 transition h-12 flex items-center justify-end pe-2" style={{ width: `${progresso}%` }}>
-                        {progresso > 8 && `${progresso.toFixed(0)}%`}
+                  <div className="absolute inset-0.5 bottom-0.5 self-end">
+                     <div className=" bg-violet-500 transition h-4 flex items-center justify-end pe-2" style={{ width: `${progresso}%` }}>
+                        {/* Daniel pediu para não mostrar a porcentagem */}
+                        {/* {progresso > 8 && `${progresso.toFixed(0)}%`} */}
                      </div>
                   </div>
                   {/* Aviso de que o vídeo acabou */}
