@@ -127,7 +127,7 @@ const VideoPlayer = () => {
 
             {assistiu ? (
                // Caso o usuário ja assistiu, mostra essa mensagem
-               <div className="absolute inset-0 bg-violet-500 flex flex-col items-center justify-center gap-4 [&>div]:flex [&>div]:items-center [&>div]:gap-2 [&>div]:cursor-pointer [&>div]:hover:scale-110 [&>div]:transition">
+               <div className="absolute inset-0 bg-video-theme flex flex-col items-center justify-center gap-4 [&>div]:flex [&>div]:items-center [&>div]:gap-2 [&>div]:cursor-pointer [&>div]:hover:scale-110 [&>div]:transition">
                   <p className="font-semibold mb-2">Você já começou a assistir esse vídeo</p>
                   <div onClick={continuarAssistindo}>
                      <Play />
@@ -143,7 +143,7 @@ const VideoPlayer = () => {
                // Logo no início caso o usuário não assistiu, mostra essa mensagem
                <div
                   onClick={handleButtonClick}
-                  className="absolute text-center flex flex-col items-center bg-violet-500 p-5 gap-2 cursor-pointer border rounded opacity-90"
+                  className="absolute text-center flex flex-col items-center bg-video-theme p-5 gap-2 cursor-pointer border rounded opacity-90"
                >
                   <p className="font-semibold">Seu vídeo já começou</p>
                   <VolumeOff className="size-12" />
@@ -153,13 +153,13 @@ const VideoPlayer = () => {
                <>
                   {/* Botão animado de play ou pause */}
                   {mostrarAnimacaoDePlayOuPause && (
-                     <div className="absolute flex items-center justify-center bg-violet-500 rounded-full p-3 sm:p-4">
+                     <div className="absolute flex items-center justify-center bg-video-theme rounded-full p-3 sm:p-4">
                         {playing ? <Pause className="size-9 sm:size-12" /> : <Play className="size-9 sm:size-12" />}
                      </div>
                   )}
                   {/* Barra de progresso */}
                   <div className="absolute inset-0.5 bottom-0.5 self-end">
-                     <div className=" bg-violet-500 transition h-4 flex items-center justify-end pe-2" style={{ width: `${progresso}%` }}>
+                     <div className=" bg-video-theme transition h-4 flex items-center justify-end pe-2" style={{ width: `${progresso}%` }}>
                         {/* Daniel pediu para não mostrar a porcentagem */}
                         {/* {progresso > 8 && `${progresso.toFixed(0)}%`} */}
                      </div>
@@ -168,7 +168,7 @@ const VideoPlayer = () => {
                   {videoTerminou && (
                      <div
                         onClick={assistirDoInicio}
-                        className="absolute inset-0 bg-violet-500 flex flex-col items-center justify-center gap-4 px-4"
+                        className="absolute inset-0 bg-video-theme flex flex-col items-center justify-center gap-4 px-4"
                      >
                         <p className="font-semibold mb-2 lg:text-2xl">Seu vídeo acabou, clique para assistir novamente!</p>
                         <Repeat className="size-10 lg:size-15" />
