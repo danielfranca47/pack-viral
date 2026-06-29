@@ -1,12 +1,183 @@
-import Video from "next-video";
+"use client";
+import { Pause, Play, Repeat, VolumeOff } from "lucide-react";
+import Player from "next-video";
+import { useEffect, useRef, useState } from "react";
 
-const testUrl = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4";
-const testThumbnail = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerFun.jpg";
+const videoUrl = "https://res.cloudinary.com/dtra2u08q/video/upload/v1775124216/Cakto_packviral.online_nbijpd.mp4";
 
-// TODO: Mais tarde implementar um poster muito mais melhor
-// TODO: Estudar mais sobre a API em https://next-video.dev/docs#main
+// Caso queira escalar ler: https://next-video.dev/docs#main
 
 const VideoPlayer = () => {
-   return <Video width={900} src={testUrl} className="**:mx-auto aspect-auto! *:border-2 *:w-[80%]! md:*:w-150! xl:*:w-225!" />;
+   // Define se o usuário clicou ou não no botão para ativar o som
+   const [clicaste, setClicaste] = useState(false);
+   // Define se o usuário assistiu ou não
+   const [assistiu, setAssistiu] = useState(false);
+   // Define se a análise do tempo assistido foi concluida
+   const [analiseConcluida, setAnaliseConcluida] = useState(false);
+   // Define o percentual do progresso do tempo
+   const [progresso, setProgresso] = useState(0);
+   // Define se o video está sendo reproduzido
+   const [playing, setPlaying] = useState(true);
+   // Define se a animação de play ou pause deve ser mostrada
+   const [mostrarAnimacaoDePlayOuPause, setMostrarAnimacaoDePlayOuPause] = useState(false);
+   // Define se o vídeo chegou ao fim
+   const [videoTerminou, setVideoTerminou] = useState(false);
+
+   const videoRef = useRef<HTMLVideoElement | null>(null);
+
+   function handleButtonClick() {
+      if (videoRef?.current) {
+         setClicaste(true);
+         videoRef.current.muted = false;
+         videoRef.current.volume = 1;
+         videoRef.current.currentTime = 0;
+      }
+   }
+
+   function continuarAssistindo() {
+      if (videoRef?.current) {
+         videoRef.current.muted = false;
+         videoRef.current.volume = 1;
+         videoRef.current.currentTime = Number(localStorage.getItem("tempoAssistido"));
+         setAssistiu(false);
+         setClicaste(true);
+      }
+   }
+
+   function assistirDoInicio() {
+      if (videoRef?.current) {
+         videoRef.current.muted = false;
+         videoRef.current.volume = 1;
+         videoRef.current.currentTime = 0;
+         setAssistiu(false);
+         setClicaste(true);
+         setVideoTerminou(false);
+         videoRef.current.play();
+      }
+   }
+
+   function mapearProgresso(progressoReal: number) {
+      if (progressoReal <= 70) {
+         // aceleração progressiva (ease-out)
+         return Math.pow(progressoReal / 70, 0.4) * 70;
+      } else {
+         // sincronização real
+         return progressoReal;
+      }
+   }
+
+   useEffect(() => {
+      // Verifica se o usuário já assistiu ou não
+      const tempoAssistido = localStorage.getItem("tempoAssistido");
+      function verificarSeAssistiu() {
+         if (Number(tempoAssistido) > 10) setAssistiu(true);
+         setAnaliseConcluida(true);
+      }
+      verificarSeAssistiu();
+
+      // Atualiza o progresso no localStora a cada 10 segundos
+      const atualizar = setInterval(() => {
+         console.log(String(videoRef?.current?.currentTime));
+         localStorage.setItem("tempoAssistido", String(videoRef?.current?.currentTime));
+      }, 8000);
+
+      // Clean-up do timer
+      return () => {
+         clearInterval(atualizar);
+      };
+   }, []);
+
+   /* Renderiza o player após verificar se o usuário assistiu */
+   return (
+      analiseConcluida && (
+         <div className="w-fit relative flex items-center justify-center cursor-pointer mx-4 sm:mx-0">
+            <Player
+               autoPlay
+               muted
+               controls={false}
+               onEnded={() => setVideoTerminou(true)}
+               style={{ opacity: "0 !important" }}
+               ref={videoRef}
+               src={videoUrl}
+               onPlay={() => setPlaying}
+               onClick={() => {
+                  // Ao clicar no vídeo, ele pausa ou resume dependendo do estado
+                  if (videoRef?.current) {
+                     if (playing) {
+                        videoRef.current.pause();
+                        setPlaying(false);
+                     } else {
+                        videoRef.current.play();
+                        setPlaying(true);
+                     }
+                  }
+                  // Ao clicar no vídeo, ele mostra o botão de play se ele estiver pausado e vice-versa por 2 segundos
+                  setMostrarAnimacaoDePlayOuPause(true);
+                  setTimeout(() => {
+                     setMostrarAnimacaoDePlayOuPause(false);
+                  }, 2000);
+               }}
+               className="**:mx-auto aspect-auto! border border-tema *:border *:border-tema *:w-full! md:*:w-120! xl:*:w-130!"
+               onTimeUpdate={(e) => {
+                  // Calcular a percentagem do progresso de acordo com a duração total e o tempo actual do vídeo
+                  const progressoReal = (e.currentTarget.currentTime / e.currentTarget.duration) * 100;
+                  setProgresso(mapearProgresso(progressoReal));
+               }}
+            />
+
+            {assistiu ? (
+               // Caso o usuário ja assistiu, mostra essa mensagem
+               <div className="absolute inset-0 bg-video-theme flex flex-col items-center justify-center gap-4 [&>div]:flex [&>div]:items-center [&>div]:gap-2 [&>div]:cursor-pointer [&>div]:hover:scale-110 [&>div]:transition">
+                  <p className="font-semibold mb-2">Você já começou a assistir esse vídeo</p>
+                  <div onClick={continuarAssistindo}>
+                     <Play />
+                     <span>Continuar assistindo?</span>
+                  </div>
+                  <hr className="border-white w-50 border-dashed" />
+                  <div onClick={assistirDoInicio}>
+                     <Repeat />
+                     <span>Assistir do início?</span>
+                  </div>
+               </div>
+            ) : !clicaste ? (
+               // Logo no início caso o usuário não assistiu, mostra essa mensagem
+               <div
+                  onClick={handleButtonClick}
+                  className="absolute text-center flex flex-col items-center bg-video-theme p-5 gap-2 cursor-pointer border rounded opacity-90"
+               >
+                  <p className="font-semibold">Seu vídeo já começou</p>
+                  <VolumeOff className="size-12" />
+                  <p>Clique para ouvir</p>
+               </div>
+            ) : (
+               <>
+                  {/* Botão animado de play ou pause */}
+                  {mostrarAnimacaoDePlayOuPause && (
+                     <div className="absolute flex items-center justify-center bg-video-theme rounded-full p-3 sm:p-4">
+                        {playing ? <Pause className="size-9 sm:size-12" /> : <Play className="size-9 sm:size-12" />}
+                     </div>
+                  )}
+                  {/* Barra de progresso */}
+                  <div className="absolute inset-0.5 bottom-0.5 self-end">
+                     <div className=" bg-video-theme transition h-4 flex items-center justify-end pe-2" style={{ width: `${progresso}%` }}>
+                        {/* Daniel pediu para não mostrar a porcentagem */}
+                        {/* {progresso > 8 && `${progresso.toFixed(0)}%`} */}
+                     </div>
+                  </div>
+                  {/* Aviso de que o vídeo acabou */}
+                  {videoTerminou && (
+                     <div
+                        onClick={assistirDoInicio}
+                        className="absolute inset-0 bg-video-theme flex flex-col items-center justify-center gap-4 px-4"
+                     >
+                        <p className="font-semibold mb-2 lg:text-2xl">Seu vídeo acabou, clique para assistir novamente!</p>
+                        <Repeat className="size-10 lg:size-15" />
+                     </div>
+                  )}
+               </>
+            )}
+         </div>
+      )
+   );
 };
 export default VideoPlayer;

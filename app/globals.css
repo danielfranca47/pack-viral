@@ -3,11 +3,13 @@
 :root {
    --background: #000000;
    --tema: #41f557;
+   --video-theme: #dc222f;
 }
 
 @theme inline {
    --color-background: var(--background);
    --color-tema: var(--tema);
+   --color-video-theme: var(--video-theme);
    --font-sans: var(--font-geist-sans);
 }
 
