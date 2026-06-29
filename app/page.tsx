@@ -6,7 +6,7 @@ import Button from "@/components/ui/Button";
 import EmblaCarousel from "@/components/ui/EmblaCarousel";
 import ProgressBar from "@/components/ui/ProgressBar/ProgressBar";
 import VideoPlayer from "@/components/ui/VideoPlayer";
-import { listaDeBonus, nichosEmAlta, oqueIraReceber, oqueMudouNoCurso, perguntaResposta } from "@/data/data";
+import { LINK_CHECKOUT_HOTMART, listaDeBonus, nichosEmAlta, oqueIraReceber, oqueMudouNoCurso, perguntaResposta } from "@/data/data";
 import { CircleArrowDown, SquareCheck } from "lucide-react";
 import Image from "next/image";
 
@@ -51,7 +51,7 @@ export default function Home() {
                   />
 
                   {/* CTA */}
-                  <Button>Quero monetizar</Button>
+                  <Button href={LINK_CHECKOUT_HOTMART.premium}>Quero monetizar</Button>
                </Container>
             </div>
             {/* Vídeo de demonstração */}
@@ -151,6 +151,7 @@ export default function Home() {
                   <CardPlano
                      foto="/img/planos/premium.png"
                      cta="SIM! QUERO ESSA SUPER OFERTA!"
+                     href={LINK_CHECKOUT_HOTMART.premium}
                      modo="premium"
                      preco={47}
                      destaques={[
@@ -170,6 +171,7 @@ export default function Home() {
                   <CardPlano
                      foto="/img/planos/iniciante.png"
                      cta="Quero Comprar Essa Oferta!"
+                     href={LINK_CHECKOUT_HOTMART.iniciante}
                      modo="iniciante"
                      preco={27}
                      destaques={["Pack Império Viral 2.0", "+10.000 Vídeos Virais", "Acesso Imediato", "7 Dias de Garantia"]}

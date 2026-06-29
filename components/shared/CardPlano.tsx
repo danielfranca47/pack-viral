@@ -8,8 +8,9 @@ interface ICardPlano {
    destaques: string[];
    preco: number;
    cta: string;
+   href: string;
 }
-const CardPlano = ({ foto, modo, destaques, preco, cta }: ICardPlano) => {
+const CardPlano = ({ foto, modo, destaques, preco, cta, href }: ICardPlano) => {
    return (
       <div className={`sombraBtn ${modo === "premium" ? "text-black bg-zinc-100" : "bg-black text-zinc-100 sticky top-0"} h-fit`}>
          <p className="text-xl lg:text-2xl italic font-light">Este é um produto 100% digital, e você receberá o acesso por email.</p>
@@ -38,7 +39,7 @@ const CardPlano = ({ foto, modo, destaques, preco, cta }: ICardPlano) => {
          <div className="pb-5">
             <p className="font-bold mb-4  text-xl lg:text-2xl">Receba o acesso agora por:</p>
             <p className="mb-9 sm:mb-13 text-5xl sm:text-6xl lg:text-7xl font-black text-tema">R${Number(preco).toFixed(2).replace(".", ",")}</p>
-            <Button>{cta}</Button>
+            <Button href={href}>{cta}</Button>
             {modo === "premium" && (
                <p className="font-semibold mt-9">
                   Aproveite Agora: <span className="underline font-light">Você não encontrará este preço depois!</span>

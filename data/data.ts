@@ -1,5 +1,10 @@
 import { IBonus, INichoEmAlta, IOqueIraReceber, IPerguntaResposta } from "@/types/types";
 
+export const LINK_CHECKOUT_HOTMART = {
+   premium: "https://pay.hotmart.com/U106225774D",
+   iniciante: "https://pay.hotmart.com/N106408909N",
+};
+
 export const nichosEmAlta: INichoEmAlta[] = [
    { titulo: "Videos do desenho do Simpsons. Muito bom para monetizar a conta muito rápido!", foto: "/img/nichosEmAlta/1.png" },
    { titulo: "Poste cortes de Filmes e Séries. Um dos melhores nichos para obter resultados rápidos.", foto: "/img/nichosEmAlta/2.png" },
