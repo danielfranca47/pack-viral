@@ -39,6 +39,8 @@ bun dev
 
 Abra [http://localhost:3000](http://localhost:3000) no seu navegador para ver o resultado.
 
+Online: https://pack-viral.vercel.app
+
 ## Editando o Projeto
 
 ### Editando Imagens
