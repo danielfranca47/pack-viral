@@ -3,6 +3,12 @@ import { IBonus, INichoEmAlta, IOqueIraReceber, IPerguntaResposta } from "@/type
 export const LINK_CHECKOUT_HOTMART = {
    premium: "https://pay.hotmart.com/U106225774D",
    iniciante: "https://pay.hotmart.com/N106408909N",
+   /** Produto de entrada vendido em /tiktok-shop */
+   tiktokShop: "https://pay.hotmart.com/E104241491K",
+   /** Oferta do OTO em /upsell-premium (mesmo produto Premium, com cupom da oferta) */
+   premiumOTO: "https://pay.hotmart.com/U106225774D?off=eidjh6nk",
+   /** Oferta do downsell em /downsell-iniciante (mesmo produto Iniciante, com cupom da oferta) */
+   inicianteDownsell: "https://pay.hotmart.com/N106408909N?off=zyttrf6q",
 };
 
 export const nichosEmAlta: INichoEmAlta[] = [
