@@ -1,8 +1,7 @@
 import Container from "@/components/layout/Container";
+import HotmartFunnelWidget from "@/components/shared/HotmartFunnelWidget";
 import Accordion from "@/components/ui/Accordion";
 import DeclineLink from "@/components/ui/DeclineLink";
-import PillButton from "@/components/ui/PillButton";
-import { LINK_CHECKOUT_HOTMART } from "@/data/data";
 import { CircleCheck } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
@@ -61,7 +60,7 @@ export default function DownsellIniciante() {
                   <p className="text-sm text-zinc-500 line-through">Plano completo: R$97,00</p>
                   <p className="my-1 text-4xl font-black text-tema sm:text-5xl">R$ 27,00</p>
                   <p className="mb-6 text-xs text-zinc-500">pagamento único · checkout seguro Hotmart</p>
-                  <PillButton href={LINK_CHECKOUT_HOTMART.inicianteDownsell}>Quero essa opção →</PillButton>
+                  <HotmartFunnelWidget />
                   <div className="mt-4.5">
                      <DeclineLink href="/obrigado">Não, obrigado. Só o que já tenho está bom →</DeclineLink>
                   </div>

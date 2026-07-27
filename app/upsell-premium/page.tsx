@@ -1,9 +1,10 @@
 import Container from "@/components/layout/Container";
 import CardBonus from "@/components/shared/CardBonus";
 import CardTestemunhoTexto from "@/components/shared/CardTestemunhoTexto";
+import HotmartFunnelWidget from "@/components/shared/HotmartFunnelWidget";
 import DeclineLink from "@/components/ui/DeclineLink";
 import PillButton from "@/components/ui/PillButton";
-import { LINK_CHECKOUT_HOTMART, listaDeBonus } from "@/data/data";
+import { listaDeBonus } from "@/data/data";
 import { Check, CircleCheck } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
@@ -75,8 +76,8 @@ export default function UpsellPremium() {
                <p className="mt-3.5 text-center text-xs font-semibold text-zinc-500">▶ Assista antes de decidir — 3 minutos</p>
 
                <div className="mt-8 flex flex-col items-center gap-3.5">
-                  <PillButton href={LINK_CHECKOUT_HOTMART.premiumOTO} className="max-w-md">
-                     Sim! Quero essa super oferta →
+                  <PillButton href="#oferta" className="max-w-md">
+                     Ver oferta completa ↓
                   </PillButton>
                   <DeclineLink href="/downsell-iniciante">Não, obrigado. Quero continuar só com o que já comprei →</DeclineLink>
                </div>
@@ -144,7 +145,7 @@ export default function UpsellPremium() {
                   <p className="text-sm text-zinc-500 line-through">De R$97,00</p>
                   <p className="my-1 text-5xl font-black text-tema">R$ 47,00</p>
                   <p className="mb-7 text-xs text-zinc-500">pagamento único · checkout seguro Hotmart</p>
-                  <PillButton href={LINK_CHECKOUT_HOTMART.premiumOTO}>Sim! Quero essa super oferta →</PillButton>
+                  <HotmartFunnelWidget />
                   <p className="mt-4.5 text-xs font-bold tracking-wide text-video-theme uppercase">
                      Esse preço não aparece de novo depois que você sair desta página
                   </p>
