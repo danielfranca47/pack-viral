@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uma opção mais simples — Pack Império Viral</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#000000;
+    --tema:#41f557;
+    --tema-glow:rgba(65,245,87,0.45);
+    --video:#dc222f;
+    --white:#ffffff;
+    --gray:#a8a8a8;
+    --card:#0a0b0a;
+    --line:rgba(65,245,87,0.22);
+    --radius:28px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--white);
+    font-family:'Geist',-apple-system,sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-weight:800;letter-spacing:-0.01em;line-height:1.15;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px;}
+  .section{padding:52px 0;}
+  .tema{color:var(--tema);}
+  .center{text-align:center;}
+
+  .logo{display:flex;flex-direction:column;align-items:center;gap:6px;margin-bottom:28px;}
+  .logo svg{width:52px;height:auto;}
+  .logo .word{font-family:'Geist',serif;letter-spacing:0.3em;font-weight:500;font-size:12px;text-transform:uppercase;padding-top:5px;border-top:1.5px solid rgba(255,255,255,0.6);}
+
+  /* ---------- HEADER SUAVE ---------- */
+  .soft-header{padding:44px 0 8px;text-align:center;}
+  .soft-header .kicker{font-size:14px;color:var(--gray);font-weight:600;margin-bottom:14px;}
+  .soft-header h1{font-size:28px;max-width:560px;margin:0 auto 16px;text-transform:none;}
+  .soft-header p{font-size:16px;color:var(--gray);font-weight:500;max-width:480px;margin:0 auto;}
+
+  /* ---------- OFERTA ---------- */
+  .plan-box{
+    background:var(--card);border:2px solid var(--line);border-radius:var(--radius);
+    padding:40px 34px;text-align:center;margin-top:8px;
+  }
+  .plan-box h2{font-size:22px;margin-bottom:20px;text-transform:none;}
+  .plan-includes{display:inline-flex;flex-direction:column;gap:12px;text-align:left;margin:0 auto 28px;}
+  .plan-includes li{list-style:none;display:flex;gap:10px;align-items:flex-start;font-size:15.5px;font-weight:500;color:var(--white);}
+  .plan-includes li svg{flex:none;margin-top:3px;}
+  .price-block .old{font-size:15px;color:var(--gray);text-decoration:line-through;}
+  .price-block .new{font-size:46px;font-weight:900;color:var(--tema);margin:4px 0 2px;}
+  .price-block .cash{font-size:13px;color:var(--gray);font-weight:500;margin-bottom:26px;}
+
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    background:var(--tema);color:#04220a;font-weight:800;
+    font-size:16px;padding:19px 30px;border-radius:999px;border:none;
+    cursor:pointer;box-shadow:0 0 35px var(--tema-glow);
+    transition:transform .15s ease, box-shadow .15s ease;
+    width:100%;max-width:420px;
+  }
+  .btn:hover{box-shadow:0 0 50px var(--tema-glow);transform:translateY(-1px);}
+  .btn:active{transform:translateY(1px);}
+
+  .btn-decline{
+    display:inline-flex;align-items:center;justify-content:center;
+    font-size:14px;color:var(--video);font-weight:700;
+    border:2px solid var(--video);border-radius:999px;
+    padding:13px 24px;text-decoration:none;background:transparent;
+    transition:background .15s ease, color .15s ease;
+    margin-top:18px;
+  }
+  .btn-decline:hover{background:var(--video);color:var(--white);}
+
+  /* ---------- POR QUE MENOR ---------- */
+  .why{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .why h3{font-size:20px;margin-bottom:16px;text-align:center;text-transform:none;}
+  .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .why-col{padding:18px;}
+  .why-col .tag{font-size:12px;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:10px;display:block;}
+  .why-col ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
+  .why-col li{font-size:14px;color:var(--gray);font-weight:500;}
+  .why-col.current li{color:var(--white);}
+  .why-col.current .tag{color:var(--tema);}
+
+  /* ---------- GARANTIA ---------- */
+  .guarantee-box{text-align:center;padding:52px 0;}
+  .seal{
+    width:84px;height:84px;border-radius:50%;border:2px solid var(--tema);
+    display:flex;align-items:center;justify-content:center;margin:0 auto 18px;
+    font-size:28px;
+  }
+  .guarantee-box h3{font-size:19px;margin-bottom:12px;text-transform:none;}
+  .guarantee-box p{font-size:14.5px;color:var(--gray);font-weight:500;max-width:480px;margin:0 auto;}
+
+  /* ---------- FAQ ---------- */
+  .faq h3{font-size:20px;margin-bottom:22px;text-align:center;text-transform:none;}
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-q{
+    width:100%;text-align:left;background:none;border:none;
+    padding:18px 0;font-size:15px;font-weight:700;
+    display:flex;justify-content:space-between;align-items:center;cursor:pointer;color:var(--white);
+  }
+  .faq-q .plus{font-size:20px;color:var(--tema);transition:transform .2s ease;font-weight:400;}
+  .faq-item.open .plus{transform:rotate(45deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease;}
+  .faq-a p{font-size:14px;color:var(--gray);padding-bottom:18px;font-weight:500;}
+
+  footer{padding:30px 0 60px;text-align:center;border-top:1px solid var(--line);}
+  footer p{font-size:12px;color:var(--gray);max-width:520px;margin:0 auto 6px;font-weight:500;}
+
+  @media (max-width:600px){
+    .why-grid{grid-template-columns:1fr;}
+    .plan-box{padding:30px 22px;}
+  }
+</style>
+</head>
+<body>
+
+  <!-- HEADER SUAVE -->
+  <section class="soft-header wrap">
+    <div class="logo">
+      <svg viewBox="0 0 100 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="14" cy="8" r="3.2" fill="white"/><circle cx="36" cy="4" r="3.2" fill="white"/><circle cx="58" cy="4" r="3.2" fill="white"/><circle cx="80" cy="8" r="3.2" fill="white"/>
+        <path d="M8 12 L14 8 L28 24 L36 6 L47 24 L58 6 L66 24 L80 8 L86 12 L80 30 L14 30 Z" stroke="white" stroke-width="2.4" fill="none" stroke-linejoin="round"/>
+      </svg>
+      <div class="word">Empire Class</div>
+    </div>
+    <p class="kicker">Sem problemas — entendemos.</p>
+    <h1>Que tal uma versão mais simples do Pack Império Viral, sem compromisso?</h1>
+    <p>Preparamos uma opção de entrada, com o essencial pra você começar a viralizar, por uma fração do valor.</p>
+  </section>
+
+  <!-- OFERTA -->
+  <section class="section wrap" id="oferta">
+    <div class="plan-box">
+      <h2>Pack Império Viral 2.0 — Plano Iniciante</h2>
+      <ul class="plan-includes">
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="#41f557" stroke-width="2.4" stroke-linecap="round"/></svg> Pack Império Viral 2.0</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="#41f557" stroke-width="2.4" stroke-linecap="round"/></svg> +10.000 vídeos virais</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="#41f557" stroke-width="2.4" stroke-linecap="round"/></svg> Acesso imediato pela área de membros</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="#41f557" stroke-width="2.4" stroke-linecap="round"/></svg> 7 dias de garantia</li>
+      </ul>
+      <div class="price-block">
+        <div class="old">Plano completo: R$97,00</div>
+        <div class="new">R$ 27,00</div>
+        <div class="cash">pagamento único · checkout seguro Hotmart</div>
+      </div>
+      <a href="https://pay.hotmart.com/N106408909N?off=zyttrf6q" class="btn">Quero essa opção →</a>
+      <br>
+      <a href="obrigado-final.html" class="btn-decline">Não, obrigado. Só o que já tenho está bom →</a>
+    </div>
+  </section>
+
+  <!-- POR QUE É MENOR -->
+  <section class="section why">
+    <div class="wrap">
+      <h3>O que muda em relação ao plano completo</h3>
+      <div class="why-grid">
+        <div class="why-col">
+          <span class="tag">Premium (R$47)</span>
+          <ul>
+            <li>+70.000 vídeos virais</li>
+            <li>5 bônus inclusos</li>
+            <li>Acesso imediato</li>
+            <li>7 dias de garantia</li>
+          </ul>
+        </div>
+        <div class="why-col current">
+          <span class="tag">Iniciante (R$27)</span>
+          <ul>
+            <li>+10.000 vídeos virais</li>
+            <li>Sem bônus adicionais</li>
+            <li>Acesso imediato</li>
+            <li>7 dias de garantia</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GARANTIA -->
+  <section class="guarantee-box wrap">
+    <div class="seal">🛡</div>
+    <h3>Satisfação garantida</h3>
+    <p>Mesma garantia de 7 dias do plano completo. Se não fizer sentido pra você, é só enviar um e-mail e devolvemos 100% do valor — sem burocracia.</p>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq wrap">
+    <h3>Dúvidas rápidas</h3>
+    <div id="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">Posso fazer upgrade pro Premium depois? <span class="plus">+</span></button>
+        <div class="faq-a"><p>No momento essa oferta é única para esta página. Depois de sair, o acesso ao plano completo com os 5 bônus não fica mais disponível neste valor.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Os vídeos são diferentes dos do plano completo? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Não. São os mesmos vídeos virais, só que em quantidade reduzida (10.000 em vez de 70.000) e sem os bônus extras.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Como recebo o acesso? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Assim que o pagamento é confirmado, você recebe um e-mail com o acesso à área de membros. É imediato.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p>Império Viral não garante resultados de venda ou monetização — o desempenho depende do seu conteúdo, do seu perfil e da sua constância.</p>
+      <p>Compra processada com segurança via Hotmart. Uma marca Empire Class.</p>
+    </div>
+  </footer>
+
+<script>
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    q.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-a').style.maxHeight = null; });
+      if (!isOpen) { item.classList.add('open'); a.style.maxHeight = a.scrollHeight + 'px'; }
+    });
+  });
+</script>
+
+</body>
+</html>

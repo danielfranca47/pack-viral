@@ -2,10 +2,15 @@ import Container from "@/components/layout/Container";
 import CardTestemunhoTexto from "@/components/shared/CardTestemunhoTexto";
 import Accordion from "@/components/ui/Accordion";
 import { LINK_CHECKOUT_HOTMART } from "@/data/data";
-import { Play } from "lucide-react";
 import Image from "next/image";
 import { Metadata } from "next";
 import StickyBar from "./StickyBar";
+
+const videosLequeCelulares = [
+   "https://res.cloudinary.com/dtra2u08q/video/upload/v1785232288/5115f45c5285e2728bf81752830aaf24_odmd1w.mp4",
+   "https://res.cloudinary.com/dtra2u08q/video/upload/v1785231897/From_Klickpin.com-_Useful_small_routine_upgrades_with_charm_and_ideas_for_creative_people_that_feel_easy_to_keep_up-pin-id-20125529581047819_a1cy6t.mp4",
+   "https://res.cloudinary.com/dtra2u08q/video/upload/v1785231896/From_Klickpin.com-_Timeless_couple_habits_and_clever_inspiration_this_season_to_send_tonight-pin-id-881438958318420868_1_nqu4hm.mp4",
+];
 
 export const metadata: Metadata = {
    title: "Império Shop — 300 vídeos prontos para o TikTok Shop",
@@ -55,19 +60,40 @@ export default function TiktokShop() {
                {/* Leque de celulares */}
                <div className="relative mb-8 h-64 w-full max-w-md sm:h-80">
                   <div className="absolute top-3.5 left-1/2 z-10 h-56 w-32 -translate-x-1/2 -rotate-[13deg] overflow-hidden rounded-3xl border-2 border-tema bg-zinc-950 shadow-[0_0_40px_rgba(65,245,87,0.4)] sm:h-70 sm:w-38">
-                     <div className="absolute top-3 left-3 rounded-md bg-tema px-2 py-1 text-[10px] font-black text-black">VÍDEO 118</div>
-                     <div className="absolute inset-0 bg-gradient-to-br from-[#123018] to-black" />
-                     <Play className="absolute top-1/2 left-1/2 size-9 -translate-x-1/2 -translate-y-1/2 rounded-full bg-tema p-2 text-black" />
+                     <div className="absolute top-3 left-3 z-10 rounded-md bg-tema px-2 py-1 text-[10px] font-black text-black">VÍDEO 118</div>
+                     <video
+                        src={videosLequeCelulares[0]}
+                        className="h-full w-full object-cover"
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        preload="metadata"
+                     />
                   </div>
                   <div className="absolute top-3.5 left-1/2 z-20 h-56 w-32 -translate-x-1/2 rotate-[13deg] overflow-hidden rounded-3xl border-2 border-tema bg-zinc-950 shadow-[0_0_40px_rgba(65,245,87,0.4)] sm:h-70 sm:w-38">
-                     <div className="absolute top-3 left-3 rounded-md bg-tema px-2 py-1 text-[10px] font-black text-black">VÍDEO 244</div>
-                     <div className="absolute inset-0 bg-gradient-to-br from-[#123018] to-black" />
-                     <Play className="absolute top-1/2 left-1/2 size-9 -translate-x-1/2 -translate-y-1/2 rounded-full bg-tema p-2 text-black" />
+                     <div className="absolute top-3 left-3 z-10 rounded-md bg-tema px-2 py-1 text-[10px] font-black text-black">VÍDEO 244</div>
+                     <video
+                        src={videosLequeCelulares[1]}
+                        className="h-full w-full object-cover"
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        preload="metadata"
+                     />
                   </div>
                   <div className="absolute top-0 left-1/2 z-30 h-64 w-33 -translate-x-1/2 overflow-hidden rounded-3xl border-2 border-tema bg-zinc-950 shadow-[0_0_40px_rgba(65,245,87,0.55)] sm:h-80 sm:w-40">
-                     <div className="absolute top-3 left-3 rounded-md bg-tema px-2 py-1 text-[10px] font-black text-black">VÍDEO 007</div>
-                     <div className="absolute inset-0 bg-gradient-to-br from-[#123018] to-black" />
-                     <Play className="absolute top-1/2 left-1/2 size-10 -translate-x-1/2 -translate-y-1/2 rounded-full bg-tema p-2.5 text-black" />
+                     <div className="absolute top-3 left-3 z-10 rounded-md bg-tema px-2 py-1 text-[10px] font-black text-black">VÍDEO 007</div>
+                     <video
+                        src={videosLequeCelulares[2]}
+                        className="h-full w-full object-cover"
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        preload="metadata"
+                     />
                   </div>
                </div>
 

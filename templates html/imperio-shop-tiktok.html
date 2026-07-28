@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Império Shop — 300 vídeos prontos para o TikTok Shop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#000000;
+    --tema:#41f557;
+    --tema-dark:#2fce41;
+    --tema-glow:rgba(65,245,87,0.55);
+    --video:#dc222f;
+    --white:#ffffff;
+    --gray:#a8a8a8;
+    --card:#0a0b0a;
+    --line:rgba(65,245,87,0.28);
+    --radius:28px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--white);
+    font-family:'Geist',-apple-system,sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{font-weight:900;text-transform:uppercase;letter-spacing:-0.01em;line-height:1.08;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px;}
+  .section{padding:72px 0;}
+  .tema{color:var(--tema);}
+  .video{color:var(--video);}
+
+  /* ---------- LOGO ---------- */
+  .logo{display:flex;flex-direction:column;align-items:center;gap:6px;}
+  .logo svg{width:70px;height:auto;}
+  .logo .word{
+    font-family:'Geist',serif;
+    letter-spacing:0.35em;
+    font-weight:500;
+    font-size:15px;
+    text-transform:uppercase;
+    padding-top:6px;
+    border-top:1.5px solid rgba(255,255,255,0.7);
+  }
+
+  /* ---------- BUTTONS ---------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    background:var(--tema);
+    color:#04220a;
+    font-weight:800;
+    text-transform:uppercase;
+    font-size:16px;
+    letter-spacing:0.01em;
+    padding:19px 30px;
+    border-radius:999px;
+    border:none;
+    cursor:pointer;
+    box-shadow:0 0 45px var(--tema-glow);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{box-shadow:0 0 65px var(--tema-glow);transform:translateY(-1px);}
+  .btn:active{transform:translateY(1px);}
+  .btn.block{width:100%;}
+
+  /* ---------- STICKY BAR ---------- */
+  .stickybar{
+    position:fixed;bottom:0;left:0;right:0;
+    background:#050505;
+    border-top:1px solid var(--line);
+    padding:12px 16px;
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    z-index:100;
+    transform:translateY(120%);
+    transition:transform .35s ease;
+  }
+  .stickybar.show{transform:translateY(0);}
+  .stickybar .price{font-weight:800;font-size:15px;}
+  .stickybar .price span{color:var(--gray);text-decoration:line-through;font-weight:500;font-size:13px;margin-left:6px;}
+  .stickybar .btn{padding:13px 20px;font-size:13px;white-space:nowrap;}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:48px 0 60px;text-align:center;position:relative;overflow:hidden;}
+  .hero::before{
+    content:"";position:absolute;top:-200px;left:50%;transform:translateX(-50%);
+    width:700px;height:500px;background:radial-gradient(circle,var(--tema-glow) 0%,transparent 65%);
+    opacity:0.18;pointer-events:none;
+  }
+  .hero-inner{position:relative;z-index:1;}
+  .eyebrow-pill{
+    display:inline-block;background:rgba(65,245,87,0.1);border:1px solid var(--line);
+    color:var(--tema);font-weight:700;font-size:12.5px;letter-spacing:0.08em;text-transform:uppercase;
+    padding:8px 18px;border-radius:999px;margin-bottom:22px;
+  }
+  .hero h1{font-size:40px;max-width:760px;margin:0 auto 20px;}
+  .hero p.sub{font-size:19px;font-weight:600;color:var(--gray);max-width:600px;margin:0 auto 34px;}
+  .hero p.sub b{color:var(--white);}
+
+  /* phone fan — signature element */
+  .fan{position:relative;height:340px;margin:0 auto 34px;max-width:460px;}
+  .phone{
+    position:absolute;top:0;left:50%;
+    width:150px;height:295px;
+    border-radius:26px;
+    background:#050505;
+    border:2.5px solid var(--tema);
+    box-shadow:0 0 40px var(--tema-glow);
+    overflow:hidden;
+  }
+  .phone .screen{position:absolute;inset:8px;border-radius:18px;overflow:hidden;background:#0a0a0a;}
+  .phone .tag{position:absolute;top:12px;left:12px;font-size:10px;font-weight:800;background:var(--tema);color:#04220a;padding:3px 8px;border-radius:6px;letter-spacing:0.03em;}
+  .phone.p1{transform:translate(-50%,14px) rotate(-13deg);z-index:1;}
+  .phone.p2{transform:translate(-50%,0) rotate(0deg);z-index:3;}
+  .phone.p3{transform:translate(-50%,14px) rotate(13deg);z-index:2;}
+  .screen .grad{position:absolute;inset:0;background:linear-gradient(200deg,#123018,#0a0a0a 70%);}
+  .screen .play{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    width:40px;height:40px;border-radius:50%;
+    background:var(--tema);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .screen .play::after{content:"";display:block;border-left:13px solid #04220a;border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:3px;}
+
+  .price-row{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:26px;}
+  .price-row .old{font-size:16px;color:var(--gray);text-decoration:line-through;}
+  .price-row .new{font-size:34px;font-weight:900;color:var(--tema);}
+  .trust-row{display:flex;flex-wrap:wrap;gap:22px;justify-content:center;margin-top:28px;}
+  .trust-row .item{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--gray);}
+
+  /* ---------- PROBLEMA ---------- */
+  .problem .wrap{max-width:720px;text-align:center;}
+  .problem h2{font-size:30px;margin-bottom:16px;}
+  .problem p{font-size:17px;color:var(--gray);font-weight:500;}
+
+  /* ---------- O QUE VOCÊ RECEBE ---------- */
+  .receive-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:38px;}
+  .card{
+    background:var(--card);
+    border:2px solid var(--line);
+    border-radius:var(--radius);
+    padding:28px;
+  }
+  .card .num{font-weight:900;font-size:13px;color:var(--tema);margin-bottom:12px;display:block;}
+  .card h3{font-size:18px;text-transform:none;margin-bottom:8px;font-weight:800;}
+  .card p{font-size:14.5px;color:var(--gray);font-weight:500;}
+  .receive .head{max-width:600px;margin:0 auto;text-align:center;}
+  .receive h2{font-size:30px;margin:16px 0 6px;}
+
+  /* ---------- PROVA SOCIAL ---------- */
+  .proof h2{font-size:28px;margin:16px 0 32px;text-align:center;max-width:640px;margin-left:auto;margin-right:auto;}
+  .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .testi{background:var(--card);border:2px solid var(--line);border-radius:22px;padding:22px;}
+  .testi .stars{color:var(--tema);font-size:14px;letter-spacing:2px;margin-bottom:10px;}
+  .testi p{font-size:14.5px;color:var(--white);margin-bottom:16px;font-weight:500;}
+  .testi .who{display:flex;align-items:center;gap:10px;}
+  .testi .avatar{width:34px;height:34px;border-radius:50%;background:var(--tema);color:#04220a;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;}
+  .testi .who .name{font-size:13px;font-weight:700;text-transform:none;}
+  .testi .who .tag{font-size:12px;color:var(--gray);}
+
+  /* ---------- COMO FUNCIONA ---------- */
+  .how{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .how h2{font-size:28px;margin:16px 0 36px;text-align:center;}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .step{border-left:3px solid var(--tema);padding-left:18px;}
+  .step .n{font-size:30px;color:var(--tema);font-weight:900;}
+  .step h3{font-size:16px;margin:10px 0 6px;text-transform:none;font-weight:800;}
+  .step p{font-size:14px;color:var(--gray);font-weight:500;}
+
+  /* ---------- OFERTA ---------- */
+  .offer-box{
+    background:var(--card);
+    border:3px solid var(--tema);
+    border-radius:36px;
+    padding:44px 36px;
+    display:grid;grid-template-columns:1.15fr 1fr;gap:32px;align-items:center;
+    box-shadow:0 0 70px rgba(65,245,87,0.15);
+  }
+  .offer-box .pretag{color:var(--video);font-weight:800;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px;display:block;}
+  .offer-box h2{font-size:26px;margin-bottom:16px;text-transform:none;}
+  .offer-list{list-style:none;}
+  .offer-list li{display:flex;gap:10px;align-items:flex-start;font-size:15px;color:var(--gray);font-weight:600;margin-bottom:11px;}
+  .offer-list li b{color:var(--white);}
+  .offer-right{background:#000;border:2px solid var(--line);border-radius:24px;padding:28px;text-align:center;}
+  .offer-right .old{color:var(--gray);text-decoration:line-through;font-size:15px;}
+  .offer-right .new{font-size:44px;font-weight:900;color:var(--tema);margin:4px 0 2px;}
+  .offer-right .cash{font-size:12px;color:var(--gray);margin-bottom:20px;font-weight:500;}
+  .guarantee{display:flex;align-items:center;gap:9px;justify-content:center;margin-top:18px;font-size:12.5px;color:var(--gray);font-weight:600;}
+
+  /* ---------- FAQ ---------- */
+  .faq h2{font-size:28px;margin:16px 0 30px;text-align:center;}
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-q{
+    width:100%;text-align:left;background:none;border:none;
+    padding:22px 0;font-size:16px;font-weight:800;text-transform:none;
+    display:flex;justify-content:space-between;align-items:center;cursor:pointer;color:var(--white);
+  }
+  .faq-q .plus{font-size:22px;color:var(--tema);transition:transform .2s ease;font-weight:400;}
+  .faq-item.open .plus{transform:rotate(45deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease;}
+  .faq-a p{font-size:14.5px;color:var(--gray);padding-bottom:20px;max-width:640px;font-weight:500;}
+
+  /* ---------- FINAL CTA ---------- */
+  .final{text-align:center;padding:76px 0;}
+  .final h2{font-size:32px;margin-bottom:12px;}
+  .final p{color:var(--gray);margin-bottom:28px;font-weight:600;font-size:16px;}
+
+  footer{padding:32px 0 110px;text-align:center;border-top:1px solid var(--line);}
+  footer p{font-size:12px;color:var(--gray);max-width:560px;margin:0 auto 6px;font-weight:500;}
+
+  @media (max-width:860px){
+    .hero h1{font-size:30px;}
+    .receive-grid,.proof-grid,.steps{grid-template-columns:1fr;}
+    .offer-box{grid-template-columns:1fr;padding:30px 22px;}
+    .section{padding:52px 0;}
+  }
+</style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero" id="topo">
+    <div class="wrap hero-inner">
+      <div class="logo" style="margin-bottom:34px;">
+        <svg viewBox="0 0 100 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="14" cy="8" r="3.2" fill="white"/><circle cx="36" cy="4" r="3.2" fill="white"/><circle cx="58" cy="4" r="3.2" fill="white"/><circle cx="80" cy="8" r="3.2" fill="white"/>
+          <path d="M8 12 L14 8 L28 24 L36 6 L47 24 L58 6 L66 24 L80 8 L86 12 L80 30 L14 30 Z" stroke="white" stroke-width="2.4" fill="none" stroke-linejoin="round"/>
+        </svg>
+        <div class="word">Empire Class</div>
+      </div>
+
+      <span class="eyebrow-pill">✦ 300 vídeos prontos</span>
+      <h1>Pare de gravar vídeo.<br>Comece a <span class="tema">postar</span> hoje.</h1>
+      <p class="sub">Pack com <b>300 vídeos prontos</b> pra divulgar produtos no TikTok Shop — formato vertical, edição pronta, é só baixar e publicar.</p>
+
+      <div class="fan">
+        <div class="phone p1"><div class="screen"><div class="grad"></div><div class="play"></div></div><div class="tag">VÍDEO 118</div></div>
+        <div class="phone p3"><div class="screen"><div class="grad"></div><div class="play"></div></div><div class="tag">VÍDEO 244</div></div>
+        <div class="phone p2"><div class="screen"><div class="grad"></div><div class="play"></div></div><div class="tag">VÍDEO 007</div></div>
+      </div>
+
+      <div class="price-row">
+        <span class="old">De R$37,00</span>
+        <span class="new">R$ 5,90</span>
+      </div>
+      <a href="#oferta" class="btn">Quero os vídeos →</a>
+
+      <div class="trust-row">
+        <span class="item">✓ Garantia de 7 dias</span>
+        <span class="item">✓ Acesso na hora</span>
+        <span class="item">✓ Compra 100% segura</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEMA -->
+  <section class="section problem">
+    <div class="wrap">
+      <h2>Você já escolheu o produto.<br>O que falta é o vídeo.</h2>
+      <p>Gravar, editar e legendar um vídeo por dia toma tempo que quem está começando no TikTok Shop não tem. Enquanto isso, a concorrência posta todo dia — e quem posta mais, vende mais.</p>
+    </div>
+  </section>
+
+  <!-- O QUE VOCÊ RECEBE -->
+  <section class="section receive">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow-pill">O que vem no pack</span>
+        <h2>300 vídeos prontos,<br>organizados por nicho.</h2>
+      </div>
+      <div class="receive-grid">
+        <div class="card">
+          <span class="num">01</span>
+          <h3>300 vídeos em vertical</h3>
+          <p>Formato 9:16, resolução pronta pra TikTok e TikTok Shop — sem precisar cortar ou reformatar nada.</p>
+        </div>
+        <div class="card">
+          <span class="num">02</span>
+          <h3>Organizados por categoria</h3>
+          <p>Separados por tipo de produto, pra você achar rápido o vídeo certo pra cada item que estiver vendendo.</p>
+        </div>
+        <div class="card">
+          <span class="num">03</span>
+          <h3>Liberado pra uso comercial</h3>
+          <p>Pode baixar, editar a legenda e postar no seu perfil de vendedor sem restrição.</p>
+        </div>
+        <div class="card">
+          <span class="num">04</span>
+          <h3>Entrega automática</h3>
+          <p>Acesso liberado por e-mail assim que o pagamento é confirmado — sem espera.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROVA SOCIAL -->
+  <section class="section proof">
+    <div class="wrap">
+      <h2>Gente que parou de gravar<br>e começou só a <span class="tema">postar</span>.</h2>
+      <div class="proof-grid">
+        <div class="testi">
+          <div class="stars">★★★★★</div>
+          <p>"Eu perdia um dia inteiro editando um vídeo só. Com o pack eu posto 3 por dia sem esforço."</p>
+          <div class="who"><div class="avatar">JR</div><div><div class="name">Jéssica R.</div><div class="tag">Vendedora TikTok Shop</div></div></div>
+        </div>
+        <div class="testi">
+          <div class="stars">★★★★★</div>
+          <p>"Valeu muito mais que os R$5,90. Os vídeos já vêm no formato certo, só subir."</p>
+          <div class="who"><div class="avatar">MC</div><div><div class="name">Marcos C.</div><div class="tag">Revendedor</div></div></div>
+        </div>
+        <div class="testi">
+          <div class="stars">★★★★★</div>
+          <p>"Comprei achando que era pouca coisa e me surpreendi com a quantidade de nichos cobertos."</p>
+          <div class="who"><div class="avatar">AL</div><div><div class="name">Ana L.</div><div class="tag">Dropshipper</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section class="section how">
+    <div class="wrap">
+      <h2>Três passos entre você<br>e o primeiro vídeo postado.</h2>
+      <div class="steps">
+        <div class="step"><div class="n">01</div><h3>Você garante seu acesso</h3><p>Pagamento único de R$5,90, direto pelo checkout seguro.</p></div>
+        <div class="step"><div class="n">02</div><h3>Recebe o link na hora</h3><p>Acesso liberado por e-mail em poucos minutos após a confirmação.</p></div>
+        <div class="step"><div class="n">03</div><h3>Escolhe e posta</h3><p>Baixa o vídeo do nicho certo e publica no seu perfil ainda hoje.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFERTA -->
+  <section class="section offer" id="oferta">
+    <div class="wrap">
+      <div class="offer-box">
+        <div>
+          <span class="pretag">Oferta de entrada</span>
+          <h2>Pack Império Shop — 300 vídeos prontos</h2>
+          <ul class="offer-list">
+            <li>✓ <b>300 vídeos</b> em formato vertical, prontos pra postar</li>
+            <li>✓ Organização por <b>categoria de produto</b></li>
+            <li>✓ Liberado para <b>uso comercial</b></li>
+            <li>✓ Acesso <b>imediato</b> após a confirmação</li>
+          </ul>
+        </div>
+        <div class="offer-right">
+          <div class="old">De R$37,00</div>
+          <div class="new">R$ 5,90</div>
+          <div class="cash">à vista, pagamento único</div>
+          <a href="https://pay.hotmart.com/E104241491K" class="btn block">Quero meu acesso agora →</a>
+          <div class="guarantee">🛡 Garantia incondicional de 7 dias</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq">
+    <div class="wrap">
+      <h2>Antes de decidir</h2>
+      <div id="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">Como eu recebo os vídeos? <span class="plus">+</span></button>
+          <div class="faq-a"><p>Assim que o pagamento é confirmado, você recebe um e-mail com o link de acesso. É só entrar, baixar e postar.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Funciona pra qualquer nicho de produto? <span class="plus">+</span></button>
+          <div class="faq-a"><p>Os 300 vídeos estão organizados por categoria, cobrindo os nichos mais comuns vendidos no TikTok Shop. Você escolhe os que combinam com seu produto.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Preciso saber editar vídeo? <span class="plus">+</span></button>
+          <div class="faq-a"><p>Não. Os vídeos já vêm prontos, em formato vertical, prontos pra postar. Se quiser, pode ajustar a legenda antes de publicar.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">E se eu não gostar? <span class="plus">+</span></button>
+          <div class="faq-a"><p>Você tem 7 dias de garantia. Se não fizer sentido pra você, é só pedir reembolso, sem burocracia.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="final">
+    <div class="wrap">
+      <h2>300 vídeos por <span class="tema">R$5,90.</span></h2>
+      <p>Menos que um lanche. Semanas de conteúdo pronto.</p>
+      <a href="#oferta" class="btn">Garantir meu acesso →</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p>Império Shop não garante resultados de venda — o desempenho depende do seu produto, do seu perfil e da sua estratégia de divulgação.</p>
+      <p>Compra processada com segurança via Hotmart. Uma marca Empire Class.</p>
+    </div>
+  </footer>
+
+  <!-- STICKY BAR -->
+  <div class="stickybar" id="stickybar">
+    <span class="price">R$5,90 <span>R$37</span></span>
+    <a href="#oferta" class="btn">Quero acesso →</a>
+  </div>
+
+<script>
+  const stickybar = document.getElementById('stickybar');
+  const hero = document.getElementById('topo');
+  window.addEventListener('scroll', () => {
+    const heroBottom = hero.getBoundingClientRect().bottom;
+    if (heroBottom < 0) { stickybar.classList.add('show'); }
+    else { stickybar.classList.remove('show'); }
+  });
+
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    q.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-a').style.maxHeight = null; });
+      if (!isOpen) { item.classList.add('open'); a.style.maxHeight = a.scrollHeight + 'px'; }
+    });
+  });
+</script>
+
+</body>
+</html>
