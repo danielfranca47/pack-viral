@@ -36,6 +36,7 @@ export default function ObrigadoFinal() {
          ]}
          total="R$5,90"
          linkAreaMembros={LINK_AREA_MEMBROS.tiktokShop}
+         nomeProduto="Pack Império Shop"
          passos={[
             <>
                Você vai receber um <strong className="text-white">e-mail de confirmação</strong> em poucos minutos com o link de acesso.

@@ -1,5 +1,6 @@
 import Container from "@/components/layout/Container";
 import PillButton from "@/components/ui/PillButton";
+import { WHATSAPP_SUPORTE_NUMERO } from "@/data/data";
 import { Check, MessageCircle } from "lucide-react";
 import Image from "next/image";
 import { ReactNode } from "react";
@@ -17,9 +18,14 @@ interface IPaginaObrigado {
    passos: ReactNode[];
    /** Link direto para o produto correspondente na área de membros (Hotmart Club) */
    linkAreaMembros: string;
+   /** Nome do produto comprado, usado para contextualizar a mensagem pré-preenchida do WhatsApp */
+   nomeProduto: string;
 }
 
-const PaginaObrigado = ({ titulo, subtitulo, pedido, total, passos, linkAreaMembros }: IPaginaObrigado) => {
+const PaginaObrigado = ({ titulo, subtitulo, pedido, total, passos, linkAreaMembros, nomeProduto }: IPaginaObrigado) => {
+   const mensagemWhatsapp = encodeURIComponent(`Olá! Acabei de comprar o ${nomeProduto} e preciso de ajuda.`);
+   const linkWhatsapp = `https://wa.me/${WHATSAPP_SUPORTE_NUMERO}?text=${mensagemWhatsapp}`;
+
    return (
       <main className="bg-black">
          <Container className="flex flex-col items-center py-14 text-center sm:py-20">
@@ -64,8 +70,7 @@ const PaginaObrigado = ({ titulo, subtitulo, pedido, total, passos, linkAreaMemb
             <PillButton href={linkAreaMembros} className="mb-3.5 max-w-md">
                Acessar área de membros →
             </PillButton>
-            {/* TODO: wa.me/SEUNUMERO — substituir pelo número real de WhatsApp de suporte */}
-            <PillButton href="https://wa.me/SEUNUMERO" variant="outline" className="max-w-md">
+            <PillButton href={linkWhatsapp} variant="outline" className="max-w-md">
                <MessageCircle className="size-4" /> Falar no WhatsApp com o suporte
             </PillButton>
             <p className="mt-3 text-xs text-zinc-500">Não recebeu o e-mail? Confira a caixa de spam antes de nos chamar.</p>

@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { LINK_CHECKOUT_HOTMART } from "@/data/data";
 
 const StickyBar = () => {
    const [visivel, setVisivel] = useState(false);
@@ -21,7 +22,7 @@ const StickyBar = () => {
          <span className="text-sm font-extrabold sm:text-base">
             R$5,90 <span className="ml-1.5 text-xs font-medium text-zinc-500 line-through">R$37</span>
          </span>
-         <a href="#oferta" className="sombraBtn shrink-0 rounded-full bg-tema px-5 py-3 text-xs font-extrabold uppercase text-black sm:px-7 sm:text-sm">
+         <a href={LINK_CHECKOUT_HOTMART.tiktokShop} className="sombraBtn shrink-0 rounded-full bg-tema px-5 py-3 text-xs font-extrabold uppercase text-black sm:px-7 sm:text-sm">
             Quero acesso →
          </a>
       </div>

@@ -33,6 +33,7 @@ export default function ObrigadoIniciante() {
          ]}
          total="R$32,90"
          linkAreaMembros={LINK_AREA_MEMBROS.iniciante}
+         nomeProduto="Pack Império Viral 2.0 Iniciante"
          passos={[
             <>
                Você vai receber um <strong className="text-white">e-mail de confirmação</strong> em poucos minutos com o link da área de

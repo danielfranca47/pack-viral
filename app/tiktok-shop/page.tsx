@@ -101,7 +101,7 @@ export default function TiktokShop() {
                   <span className="text-base text-zinc-500 line-through">De R$37,00</span>
                   <span className="text-4xl font-black text-tema">R$ 5,90</span>
                </div>
-               <a href="#oferta" className="sombraBtn w-full max-w-xs rounded-full bg-tema px-8 py-4 text-center text-base font-extrabold uppercase text-black transition hover:-translate-y-0.5">
+               <a href={LINK_CHECKOUT_HOTMART.tiktokShop} className="sombraBtn w-full max-w-xs rounded-full bg-tema px-8 py-4 text-center text-base font-extrabold uppercase text-black transition hover:-translate-y-0.5">
                   Quero os vídeos →
                </a>
 
@@ -281,7 +281,7 @@ export default function TiktokShop() {
                </h2>
                <p className="mb-7 font-semibold text-zinc-400">Menos que um lanche. Semanas de conteúdo pronto.</p>
                <a
-                  href="#oferta"
+                  href={LINK_CHECKOUT_HOTMART.tiktokShop}
                   className="sombraBtn inline-block rounded-full bg-tema px-8 py-4 text-base font-extrabold uppercase text-black transition hover:-translate-y-0.5"
                >
                   Garantir meu acesso →
