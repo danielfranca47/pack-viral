@@ -4,6 +4,45 @@ Transforme seu tempo livre em dinheiro! Com nosso Pack Império Viral 2.0, você
 
 ![pack-viral](https://github.com/user-attachments/assets/86f42818-74c5-4398-9402-e3839ff2e930)
 
+## URLs do Projeto
+
+**Produção (Vercel):** https://pack-viral.vercel.app
+
+### Landing principal
+
+- https://pack-viral.vercel.app/
+
+### Funil de vendas (Hotmart)
+
+| Página | URL |
+|---|---|
+| Entrada — Pack Império Shop | https://pack-viral.vercel.app/tiktok-shop |
+| OTO — Upsell Premium | https://pack-viral.vercel.app/upsell-premium |
+| Downsell — Iniciante | https://pack-viral.vercel.app/downsell-iniciante |
+| Obrigado — aceitou o Premium | https://pack-viral.vercel.app/obrigado-premium |
+| Obrigado — aceitou o Iniciante | https://pack-viral.vercel.app/obrigado-iniciante |
+| Obrigado — recusou os dois upsells | https://pack-viral.vercel.app/obrigado |
+
+### Checkout Hotmart
+
+Definidos em [`data/data.ts`](data/data.ts) → `LINK_CHECKOUT_HOTMART`.
+
+- Entrada (Pack Império Shop): https://pay.hotmart.com/E104241491K
+- Premium (link direto): https://pay.hotmart.com/U106225774D
+- Iniciante (link direto): https://pay.hotmart.com/N106408909N
+- OTO Premium (com cupom da oferta): https://pay.hotmart.com/U106225774D?off=eidjh6nk
+- Downsell Iniciante (com cupom da oferta): https://pay.hotmart.com/N106408909N?off=zyttrf6q
+
+> Nas páginas `/upsell-premium` e `/downsell-iniciante`, a compra em um clique é feita pelo **widget do Funil de Vendas da Hotmart**, não pelos links acima — eles ficam só como referência.
+
+### Área de membros (Hotmart Club)
+
+Definidos em [`data/data.ts`](data/data.ts) → `LINK_AREA_MEMBROS`. Usados nas páginas de obrigado para levar o aluno direto ao conteúdo comprado.
+
+- Pack Império Shop: https://hotmart.com/pt-br/club/empire-class/products/7133432
+- Pack Premium: https://hotmart.com/pt-br/club/empire-class/products/7901991
+- Pack Iniciante: https://hotmart.com/pt-br/club/empire-class/products/7968705
+
 ## Tecnologias Utilizadas
 
 Este projeto utiliza as seguintes tecnologias:
@@ -38,8 +77,6 @@ bun dev
 ```
 
 Abra [http://localhost:3000](http://localhost:3000) no seu navegador para ver o resultado.
-
-Online: https://pack-viral.vercel.app
 
 ## Editando o Projeto
 
