@@ -19,6 +19,19 @@ export const LINK_CHECKOUT_HOTMART = {
    inicianteDownsell: "https://pay.hotmart.com/N106408909N?off=zyttrf6q",
 };
 
+/**
+ * Área de membros (Hotmart Club) — link direto para o conteúdo de cada produto,
+ * usado nas 3 páginas de obrigado para o aluno acessar o que comprou sem precisar navegar.
+ */
+export const LINK_AREA_MEMBROS = {
+   /** Pack Império Shop (produto de entrada, /obrigado) */
+   tiktokShop: "https://hotmart.com/pt-br/club/empire-class/products/7133432",
+   /** Pack Império Viral 2.0 Premium (/obrigado-premium) */
+   premium: "https://hotmart.com/pt-br/club/empire-class/products/7901991",
+   /** Pack Império Viral 2.0 Iniciante (/obrigado-iniciante) */
+   iniciante: "https://hotmart.com/pt-br/club/empire-class/products/7968705",
+};
+
 export const nichosEmAlta: INichoEmAlta[] = [
    { titulo: "Videos do desenho do Simpsons. Muito bom para monetizar a conta muito rápido!", foto: "/img/nichosEmAlta/1.png" },
    { titulo: "Poste cortes de Filmes e Séries. Um dos melhores nichos para obter resultados rápidos.", foto: "/img/nichosEmAlta/2.png" },

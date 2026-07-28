@@ -1,4 +1,5 @@
 import PaginaObrigado from "@/components/shared/PaginaObrigado";
+import { LINK_AREA_MEMBROS } from "@/data/data";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -31,6 +32,7 @@ export default function ObrigadoPremium() {
             { label: "+70.000 vídeos + 3 bônus", value: "Incluído" },
          ]}
          total="R$52,90"
+         linkAreaMembros={LINK_AREA_MEMBROS.premium}
          passos={[
             <>
                Você vai receber um <strong className="text-white">e-mail de confirmação</strong> em poucos minutos com o link da área de

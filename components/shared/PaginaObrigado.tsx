@@ -15,9 +15,11 @@ interface IPaginaObrigado {
    pedido: ILinhaPedido[];
    total: string;
    passos: ReactNode[];
+   /** Link direto para o produto correspondente na área de membros (Hotmart Club) */
+   linkAreaMembros: string;
 }
 
-const PaginaObrigado = ({ titulo, subtitulo, pedido, total, passos }: IPaginaObrigado) => {
+const PaginaObrigado = ({ titulo, subtitulo, pedido, total, passos, linkAreaMembros }: IPaginaObrigado) => {
    return (
       <main className="bg-black">
          <Container className="flex flex-col items-center py-14 text-center sm:py-20">
@@ -59,8 +61,7 @@ const PaginaObrigado = ({ titulo, subtitulo, pedido, total, passos }: IPaginaObr
                </div>
             </div>
 
-            {/* TODO: LINK_AREA_DE_MEMBROS — substituir pelo link real da área de membros */}
-            <PillButton href="LINK_AREA_DE_MEMBROS" className="mb-3.5 max-w-md">
+            <PillButton href={linkAreaMembros} className="mb-3.5 max-w-md">
                Acessar área de membros →
             </PillButton>
             {/* TODO: wa.me/SEUNUMERO — substituir pelo número real de WhatsApp de suporte */}

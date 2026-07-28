@@ -1,4 +1,5 @@
 import PaginaObrigado from "@/components/shared/PaginaObrigado";
+import { LINK_AREA_MEMBROS } from "@/data/data";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -34,6 +35,7 @@ export default function ObrigadoFinal() {
             { label: "300 vídeos TikTok Shop", value: "Incluído" },
          ]}
          total="R$5,90"
+         linkAreaMembros={LINK_AREA_MEMBROS.tiktokShop}
          passos={[
             <>
                Você vai receber um <strong className="text-white">e-mail de confirmação</strong> em poucos minutos com o link de acesso.
