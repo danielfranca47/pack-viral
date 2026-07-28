@@ -5,10 +5,10 @@ import HotmartFunnelWidget from "@/components/shared/HotmartFunnelWidget";
 import DeclineLink from "@/components/ui/DeclineLink";
 import PillButton from "@/components/ui/PillButton";
 import { listaDeBonus } from "@/data/data";
+import VideoPlayer from "@/components/ui/VideoPlayer";
 import { Check, CircleCheck } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
-import VslPlayer from "./VslPlayer";
 
 export const metadata: Metadata = {
    title: "Sua compra quase completa — Pack Império Viral 2.0",
@@ -71,8 +71,8 @@ export default function UpsellPremium() {
 
          {/* VSL */}
          <section className="py-4">
-            <Container>
-               <VslPlayer />
+            <Container className="flex flex-col items-center">
+               <VideoPlayer />
                <p className="mt-3.5 text-center text-xs font-semibold text-zinc-500">▶ Assista antes de decidir — 3 minutos</p>
 
                <div className="mt-8 flex flex-col items-center gap-3.5">
