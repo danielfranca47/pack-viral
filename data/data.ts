@@ -19,6 +19,9 @@ export const LINK_CHECKOUT_HOTMART = {
    inicianteDownsell: "https://pay.hotmart.com/N106408909N?off=zyttrf6q",
 };
 
+/** Vídeo de demonstração exibido na home e reaproveitado na VSL do upsell. */
+export const VIDEO_URL_PRINCIPAL = "https://res.cloudinary.com/dtra2u08q/video/upload/v1775124216/Cakto_packviral.online_nbijpd.mp4";
+
 /**
  * Área de membros (Hotmart Club) — link direto para o conteúdo de cada produto,
  * usado nas 3 páginas de obrigado para o aluno acessar o que comprou sem precisar navegar.

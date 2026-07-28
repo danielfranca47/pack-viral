@@ -1,9 +1,10 @@
 "use client";
+import { VIDEO_URL_PRINCIPAL } from "@/data/data";
 import { Pause, Play, Repeat, VolumeOff } from "lucide-react";
 import Player from "next-video";
 import { useEffect, useRef, useState } from "react";
 
-const videoUrl = "https://res.cloudinary.com/dtra2u08q/video/upload/v1775124216/Cakto_packviral.online_nbijpd.mp4";
+const videoUrl = VIDEO_URL_PRINCIPAL;
 
 // Caso queira escalar ler: https://next-video.dev/docs#main
 
